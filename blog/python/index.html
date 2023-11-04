@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  
+  <title>Python notes</title>
+  
+  <title>MyBlog</title>
+  <!-- <link href="/style.css" rel="stylesheet"/> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <nav>
+</p>
+<p style="font-size:25px;"><a href="/blog">Blogs</a>        <a href="/contact">contact</a>
+    <!-- <a href="/blog">Blogs</a> -->
+    <!-- <a href="/">Home</a> -->
+    <!-- <a href="/about">About</a> -->
+    <!-- <a href="/contact">Contact</a> -->
+  <nav>
+  <hr>
+  <section class="section">
+    <div class="container">
+      
+<h1 class="title">
+  Python notes
+</h1>
+<p class="subtitle"><strong>2023-08-25</strong></p>
+<p><code>From Programming with Mosh course</code></p>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#vs-code-setup-with-mac">VS code setup with mac</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#code-runner">code runner</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#data-types">Data types</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#strings">Strings</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#long-short-strings">Long &amp; short strings</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#string-slices">String slices</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#escape-sequences">Escape sequences</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#formatted-strings">Formatted Strings</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#string-methods">String Methods</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#numbers">Numbers</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#working-with-numbers">Working with numbers</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#type-conversion">Type conversion</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#conditional-statements">Conditional statements</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#ternary-operator">Ternary operator</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#chaining-comparison-operators">Chaining comparison operators</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#logical-operators">Logical operators</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#for-loops">For loops</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#for-else">For Else</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#nested-loops">Nested Loops</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#iterables">Iterables</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#while-loop">While loop</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#infinite-loop">Infinite Loop</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#print-even-numbers-between-1-to-10">print even numbers between 1..10</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#functions">Functions</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#defining-functions">Defining Functions</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#arguments">Arguments</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#types-of-functions">Types of Functions</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#keywords-arguments">Keywords arguments</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#default-arguments">Default arguments</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#xargs">xargs</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#xxargs">xxargs</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#scope">scope</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#fizzbuzz-challenge">fizz_buzz challenge</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#data-structures-and-algorithms">Data Structures and Algorithms</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/python/#accessing-list-items">Accessing List Items</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#list-unpacking">List unpacking</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#looping-over-lists">Looping over Lists</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#adding-or-removing-items">Adding or Removing Items</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#finding-items">Finding Items</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/python/#sorting-lists">Sorting Lists</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="vs-code-setup-with-mac">VS code setup with mac</h4>
+<p>Shift + Cmd + M     #Problems
+Shift + Cmd + P     #Command Pallete
+&gt;lint<br />
+Select Linter
+&gt;format
+Format Document
+Perferences
+Settings:
+formatOnsave  # enable</p>
+<h5 id="code-runner">code runner</h5>
+<p>Ctrl+Option+n      #runs the code runner extension</p>
+<p>fn + -&gt;/&lt;-   # go to the end/beginning of the line
+fn + DA/UA   # go to the end/beginning of the file
+Option/Alt + UA/DA  # move the line up/down</p>
+<h2 id="data-types">Data types</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>name = &quot;Full Name&quot;     #strings
+</span><span>roll_no = &quot;22&quot;    #int
+</span><span>floating_no = &quot;22.22&quot;       #floating point no
+</span><span>true_false_conditional = True       #Boolean[True/False]
+</span></code></pre>
+<h3 id="strings">Strings</h3>
+<h4 id="long-short-strings">Long short strings</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>$ python3 app.py
+</span><span>message = &quot;</span><span style="color:#a3be8c;">Python Programming</span><span>&quot;
+</span><span>long_message = &quot;&quot;&quot;
+</span><span style="color:#a3be8c;">Long message
+</span><span style="color:#a3be8c;">Long message
+</span><span style="color:#a3be8c;">Long message
+</span><span style="color:#a3be8c;">Long message
+</span><span style="color:#a3be8c;">Long message
+</span><span>&quot;&quot;&quot;
+</span><span style="color:#96b5b4;">print</span><span>(message)
+</span><span style="color:#96b5b4;">print</span><span>(long_message)
+</span><span>
+</span><span>$ python app.py
+</span><span>Python Programming
+</span><span>
+</span><span>Long message
+</span><span>Long message
+</span><span>Long message
+</span><span>Long message
+</span><span>Long message
+</span><span>
+</span></code></pre>
+<h4 id="string-slices">String slices</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>message = &quot;</span><span style="color:#a3be8c;">Python Programming</span><span>&quot;
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">len</span><span>(message))
+</span><span style="color:#96b5b4;">print</span><span>(message[</span><span style="color:#d08770;">0</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(message[</span><span style="color:#d08770;">4</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(message[-</span><span style="color:#d08770;">1</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(message[:</span><span style="color:#d08770;">3</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(message[</span><span style="color:#d08770;">3</span><span>:])
+</span><span style="color:#96b5b4;">print</span><span>(message[</span><span style="color:#d08770;">6</span><span>:</span><span style="color:#d08770;">12</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(message[:])
+</span><span>
+</span><span>
+</span><span>$ python app.py
+</span><span style="color:#d08770;">18
+</span><span>P
+</span><span>o
+</span><span>g
+</span><span>Pyt
+</span><span>hon Programming
+</span><span> Progr
+</span><span>Python Programming
+</span></code></pre>
+<h4 id="escape-sequences">Escape sequences</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>message = &quot;</span><span style="color:#a3be8c;">Python &#39;Programming&#39;</span><span>&quot;
+</span><span>message1 = &#39;</span><span style="color:#a3be8c;">Python &quot;Programming&quot;</span><span>&#39;
+</span><span>message2 = &quot;</span><span style="color:#a3be8c;">pyton </span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">Programming</span><span>&quot;
+</span><span>message3 = &#39;</span><span style="color:#a3be8c;">python </span><span style="color:#96b5b4;">\&#39;</span><span style="color:#a3be8c;">programming</span><span>&#39;
+</span><span>message4 = &#39;</span><span style="color:#a3be8c;">python </span><span style="color:#96b5b4;">\\</span><span style="color:#a3be8c;">programming</span><span>&#39;     
+</span><span>message5 = &#39;</span><span style="color:#a3be8c;">python </span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">programming</span><span>&#39;     </span><span style="color:#65737e;">#new line
+</span><span>message6 = &#39;</span><span style="color:#a3be8c;">Python</span><span style="color:#96b5b4;">\t</span><span style="color:#a3be8c;">Programming</span><span>&#39;
+</span><span>
+</span><span>$ python app.py
+</span><span>Python &#39;</span><span style="color:#a3be8c;">Programming</span><span>&#39;
+</span><span>Python &quot;</span><span style="color:#a3be8c;">Programming</span><span>&quot;
+</span><span>pyton &quot;</span><span style="color:#a3be8c;">Programming</span><span style="background-color:#bf616a;color:#2b303b;">
+</span><span>python &#39;</span><span style="color:#a3be8c;">programming</span><span style="background-color:#bf616a;color:#2b303b;">
+</span><span>python \</span><span style="background-color:#bf616a;color:#2b303b;">programming</span><span>
+</span><span>python
+</span><span>programming
+</span><span>Python    Programming
+</span></code></pre>
+<h4 id="formatted-strings">Formatted Strings</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>first = &quot;</span><span style="color:#a3be8c;">Pawan</span><span>&quot;
+</span><span>last = &quot;</span><span style="color:#a3be8c;">Chhetri</span><span>&quot;
+</span><span>full1 = </span><span style="color:#b48ead;">f</span><span>&#39;{first} {last}&#39;
+</span><span>full2 = </span><span style="color:#b48ead;">f</span><span>&quot;{</span><span style="color:#96b5b4;">len</span><span>(first)} {last}&quot;
+</span><span style="color:#96b5b4;">print</span><span>(full1)
+</span><span style="color:#96b5b4;">print</span><span>(full2)
+</span><span>
+</span><span>$ python app.py
+</span><span>Pawan Chhetri
+</span><span style="color:#d08770;">5 </span><span>Chhetri
+</span></code></pre>
+<h4 id="string-methods">String Methods</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>subject = &quot;</span><span style="color:#a3be8c;">  pYThon Programming   </span><span>&quot;
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">upper</span><span>())
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">lower</span><span>())
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">title</span><span>())
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">strip</span><span>())    </span><span style="color:#65737e;"># lstrip() is by default
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">rstrip</span><span>())
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">find</span><span>(&quot;</span><span style="color:#a3be8c;">Pro</span><span>&quot;))     </span><span style="color:#65737e;"># index of the searched 
+</span><span style="color:#96b5b4;">print</span><span>(subject.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">o</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">k</span><span>&quot;))     </span><span style="color:#65737e;"># replaces all the instances
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Pro</span><span>&quot; in subject)             </span><span style="color:#65737e;"># returns True/False
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Bro</span><span>&quot; not in subject)
+</span><span>
+</span><span>$ python app.py
+</span><span>  </span><span style="color:#bf616a;">PYTHON PROGRAMMING
+</span><span>  python programming
+</span><span>  Python Programming
+</span><span>pYThon Programming
+</span><span>  pYThon Programming
+</span><span style="color:#d08770;">9
+</span><span>  pYThkn Prkgramming
+</span><span style="color:#d08770;">True
+</span><span style="color:#d08770;">True
+</span><span>
+</span></code></pre>
+<h2 id="numbers">Numbers</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>x = 1       # int
+</span><span>x = 1.1     # floating point no.
+</span><span>x = 1 + 2j # a + bi        # complex no. where i is imaginary no.
+</span><span>
+</span><span>print(10 + 3)
+</span><span>print(10 - 3)
+</span><span>print(10 * 3)
+</span><span>print(10 / 3)
+</span><span>print(10 // 3)   #round off division result
+</span><span>print(10 % 3)    #modulus
+</span><span>print(10 ** 3)   #exponent
+</span><span>
+</span><span>x = 10
+</span><span>
+</span><span>x = x + 3    
+</span><span>x += 3      #These two are same thing
+</span></code></pre>
+<h3 id="working-with-numbers">Working with numbers</h3>
+<p><a href="https://docs.python.org/3/library/math.html">math library</a></p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>math
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">round</span><span>(</span><span style="color:#d08770;">2.9</span><span>))
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">abs</span><span>(-</span><span style="color:#d08770;">2.9</span><span>))
+</span><span style="color:#96b5b4;">print</span><span>(math.</span><span style="color:#bf616a;">ceil</span><span>(</span><span style="color:#d08770;">2.2</span><span>))
+</span><span>
+</span><span>$ python app.py
+</span><span style="color:#d08770;">3
+</span><span style="color:#d08770;">2.9
+</span><span style="color:#d08770;">3
+</span><span>
+</span></code></pre>
+<h3 id="type-conversion">Type conversion</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>x = </span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">x: </span><span>&quot;)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(x))
+</span><span>y = </span><span style="color:#bf616a;">int</span><span>(x) + </span><span style="color:#d08770;">1
+</span><span style="color:#96b5b4;">print</span><span>(y)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(y))
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">x: </span><span>{x}</span><span style="color:#a3be8c;">, y: </span><span>{y}&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>x: </span><span style="color:#d08770;">10
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">str</span><span>&#39;&gt;
+</span><span style="color:#d08770;">11
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">int</span><span>&#39;&gt;
+</span><span>x: </span><span style="color:#d08770;">10</span><span>, y: </span><span style="color:#d08770;">11
+</span></code></pre>
+<h3 id="conditional-statements">Conditional statements</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>temperature = </span><span style="color:#bf616a;">int</span><span>(</span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">temperature now:</span><span>&quot;))
+</span><span style="color:#b48ead;">if </span><span>temperature &lt; </span><span style="color:#d08770;">30</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">IT is good</span><span>&quot;)
+</span><span style="color:#b48ead;">elif </span><span>temperature == </span><span style="color:#d08770;">30</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">OK</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Very hot</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>temperature now:</span><span style="color:#d08770;">50
+</span><span>Very hot
+</span></code></pre>
+<h3 id="ternary-operator">Ternary operator</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>age = </span><span style="color:#bf616a;">int</span><span>(</span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">age: </span><span>&quot;))
+</span><span style="color:#65737e;"># if age &gt;= 22:
+</span><span style="color:#65737e;">#     message = &quot;Eligible&quot;
+</span><span style="color:#65737e;"># else:
+</span><span style="color:#65737e;">#     message = &quot;Not eligible&quot;
+</span><span>message = &quot;</span><span style="color:#a3be8c;">Eligible</span><span>&quot; </span><span style="color:#b48ead;">if </span><span>age &gt;= </span><span style="color:#d08770;">22 </span><span style="color:#b48ead;">else </span><span>&quot;</span><span style="color:#a3be8c;">Not eligible</span><span>&quot;
+</span><span style="color:#96b5b4;">print</span><span>(message)
+</span><span>
+</span><span>$ python app.py
+</span><span>age: </span><span style="color:#d08770;">20
+</span><span>Not eligible
+</span></code></pre>
+<h3 id="chaining-comparison-operators">Chaining comparison operators</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>age = </span><span style="color:#bf616a;">int</span><span>(</span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">age: </span><span>&quot;))
+</span><span style="color:#65737e;"># if age &gt;= 20 and age &lt; 36:
+</span><span style="color:#b48ead;">if </span><span style="color:#d08770;">20 </span><span>&lt;= age &lt; </span><span style="color:#d08770;">36</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">eligible</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">not eligible</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>age: </span><span style="color:#d08770;">30
+</span><span>eligible
+</span></code></pre>
+<h3 id="logical-operators">Logical operators</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>earning = </span><span style="color:#d08770;">True
+</span><span>learning = </span><span style="color:#d08770;">False
+</span><span>life = </span><span style="color:#d08770;">True
+</span><span>
+</span><span style="color:#b48ead;">if </span><span>earning or learning:     </span><span style="color:#65737e;"># evaluates to true
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Nice</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">not Nice</span><span>&quot;)
+</span><span>
+</span><span style="color:#b48ead;">if </span><span>not earning:      </span><span style="color:#65737e;"># evaluates to false
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Not good</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Good</span><span>&quot;)
+</span><span>
+</span><span style="color:#b48ead;">if </span><span>(earning or learning) and not life:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Life</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Bad</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>Nice
+</span><span>Good
+</span><span>Bad
+</span><span>
+</span></code></pre>
+<h3 id="for-loops">For loops</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># for i in range(10):      # results from 0..9  but not 10
+</span><span style="color:#65737e;"># for i in range(1,10):    # results from 1..9  but not 10
+</span><span style="color:#b48ead;">for </span><span>number </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">10</span><span>,</span><span style="color:#d08770;">2</span><span>):      </span><span style="color:#65737e;"># using 2 as a step parameter
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Message</span><span>&quot;,number, number * &quot;</span><span style="color:#a3be8c;">.</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>Message </span><span style="color:#d08770;">1</span><span> .
+</span><span>Message </span><span style="color:#d08770;">3 ...
+</span><span>Message </span><span style="color:#d08770;">5 ...</span><span>..
+</span><span>Message </span><span style="color:#d08770;">7 ......</span><span>.
+</span><span>Message </span><span style="color:#d08770;">9 .........
+</span><span>
+</span></code></pre>
+<h4 id="for-else">For Else</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>successful = </span><span style="color:#d08770;">False
+</span><span style="color:#65737e;"># successful = True
+</span><span style="color:#b48ead;">for </span><span>number </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">3</span><span>):
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Attempt</span><span>&quot;)
+</span><span>    </span><span style="color:#b48ead;">if </span><span>successful:
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">successful</span><span>&quot;)
+</span><span>        </span><span style="color:#b48ead;">break
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Failed</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>Attempt
+</span><span>Attempt
+</span><span>Attempt
+</span><span>Failed
+</span><span>
+</span><span>$ python app.py      </span><span style="color:#65737e;"># when True 
+</span><span>Attempt
+</span><span>successful
+</span><span>
+</span></code></pre>
+<h4 id="nested-loops">Nested Loops</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">for </span><span>x </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">4</span><span>):
+</span><span>    </span><span style="color:#b48ead;">for </span><span>y </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">2</span><span>):     </span><span style="color:#65737e;"># 1st inner iteration completes then upper iteration
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">(</span><span>{x}</span><span style="color:#a3be8c;">,</span><span>{y}</span><span style="color:#a3be8c;">)</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>(</span><span style="color:#d08770;">0</span><span>,</span><span style="color:#d08770;">0</span><span>)
+</span><span>(</span><span style="color:#d08770;">0</span><span>,</span><span style="color:#d08770;">1</span><span>)
+</span><span>(</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">0</span><span>)
+</span><span>(</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">1</span><span>)
+</span><span>(</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">0</span><span>)
+</span><span>(</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">1</span><span>)
+</span><span>(</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">0</span><span>)
+</span><span>(</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">1</span><span>)
+</span></code></pre>
+<h4 id="iterables">Iterables</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(</span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">5</span><span>)))       </span><span style="color:#65737e;"># range function is a iterable object
+</span><span>
+</span><span style="color:#b48ead;">for </span><span>i </span><span style="color:#b48ead;">in </span><span>[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>]:    </span><span style="color:#65737e;"># iterable list
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(i)
+</span><span style="color:#96b5b4;">print</span><span>()
+</span><span style="color:#b48ead;">for </span><span>i </span><span style="color:#b48ead;">in </span><span>&quot;</span><span style="color:#a3be8c;">Python</span><span>&quot;:     </span><span style="color:#65737e;"># strings are also iterable
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(i)
+</span><span>
+</span><span>$ python app.py
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">range</span><span>&#39;&gt;
+</span><span style="color:#d08770;">1
+</span><span style="color:#d08770;">2
+</span><span style="color:#d08770;">3
+</span><span style="color:#d08770;">4
+</span><span style="color:#d08770;">5
+</span><span>
+</span><span>P
+</span><span>y
+</span><span>t
+</span><span>h
+</span><span>o
+</span><span>n
+</span></code></pre>
+<h4 id="while-loop">While loop</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>number = </span><span style="color:#d08770;">100
+</span><span>
+</span><span style="color:#b48ead;">while </span><span>number &gt; </span><span style="color:#d08770;">0</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(number)
+</span><span>    </span><span style="color:#65737e;"># number =number // 2
+</span><span>    number//=</span><span style="color:#d08770;">2
+</span><span>
+</span><span>$ python app.py
+</span><span style="color:#d08770;">100
+</span><span style="color:#d08770;">50
+</span><span style="color:#d08770;">25
+</span><span style="color:#d08770;">12
+</span><span style="color:#d08770;">6
+</span><span style="color:#d08770;">3
+</span><span style="color:#d08770;">1
+</span><span>
+</span></code></pre>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>command = &quot;&quot;
+</span><span style="color:#b48ead;">while </span><span>command != &quot;</span><span style="color:#a3be8c;">quit</span><span>&quot;:
+</span><span style="color:#65737e;"># while command.lower() != &quot;quit&quot;:
+</span><span>    command = </span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">&gt;</span><span>&quot;).</span><span style="color:#bf616a;">lower</span><span>()
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(command)
+</span><span>
+</span><span>$ python app.py
+</span><span>&gt;hello
+</span><span>hello
+</span><span>&gt;quitter
+</span><span>quitter
+</span><span>&gt;Quit
+</span><span>quit
+</span></code></pre>
+<h4 id="infinite-loop">Infinite Loop</h4>
+<p><code>use break statements in Infinite Loops to prevent system/program from crashing</code></p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">while </span><span style="color:#d08770;">True</span><span>:
+</span><span>    command = </span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">hello&gt;..</span><span>&quot;).</span><span style="color:#bf616a;">lower</span><span>()
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(command)
+</span><span>    </span><span style="color:#b48ead;">if </span><span>command == &quot;</span><span style="color:#a3be8c;">quit</span><span>&quot;:
+</span><span>        </span><span style="color:#b48ead;">break          
+</span><span>
+</span><span>$ python app.py
+</span><span>hello&gt;..hello
+</span><span>hello
+</span><span>hello&gt;..qUit
+</span><span>quit
+</span></code></pre>
+<h5 id="print-even-numbers-between-1-to-10">print even numbers between 1 to 10</h5>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>count = </span><span style="color:#d08770;">0
+</span><span style="color:#b48ead;">for </span><span>number </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">10</span><span>):
+</span><span>    </span><span style="color:#b48ead;">if </span><span>number % </span><span style="color:#d08770;">2 </span><span>== </span><span style="color:#d08770;">0</span><span>:
+</span><span>        count+=</span><span style="color:#d08770;">1
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(number)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">We have </span><span>{count}</span><span style="color:#a3be8c;"> numbers</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span style="color:#d08770;">2
+</span><span style="color:#d08770;">4
+</span><span style="color:#d08770;">6
+</span><span style="color:#d08770;">8
+</span><span>We have </span><span style="color:#d08770;">4 </span><span>numbers
+</span></code></pre>
+<h2 id="functions">Functions</h2>
+<h3 id="defining-functions">Defining Functions</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">greet</span><span>():
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Hello</span><span>&quot;)
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Python</span><span>&quot;)
+</span><span>
+</span><span style="color:#bf616a;">greet</span><span>()
+</span><span>
+</span><span>$ python app.py
+</span><span>Hello
+</span><span>Python
+</span></code></pre>
+<h3 id="arguments">Arguments</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">greet</span><span>(</span><span style="color:#bf616a;">first_name</span><span>, </span><span style="color:#bf616a;">last_name</span><span>):               </span><span style="color:#65737e;"># parameters are passed in function def
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Hi </span><span>{first_name} {last_name}</span><span style="color:#a3be8c;">!</span><span>&quot;)
+</span><span>
+</span><span style="color:#bf616a;">greet</span><span>(&quot;</span><span style="color:#a3be8c;">Pawan</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">Chhetri</span><span>&quot;)               </span><span style="color:#65737e;"># arguments are passed when function is called
+</span><span style="color:#bf616a;">greet</span><span>(&quot;</span><span style="color:#a3be8c;">Pawan1</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">Chhetri1</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>Hi Pawan Chhetri!
+</span><span>Hi Pawan1 Chhetri1!
+</span></code></pre>
+<h3 id="types-of-functions">Types of Functions</h3>
+<ol>
+<li>Perform a task   # like printing something in a terminal</li>
+<li>Return a value   # like calculating and returning a value</li>
+</ol>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">greet</span><span>(</span><span style="color:#bf616a;">name</span><span>):
+</span><span>    </span><span style="color:#b48ead;">return f</span><span>&quot;</span><span style="color:#a3be8c;">My name is </span><span>{name}</span><span style="color:#a3be8c;">.</span><span>&quot;
+</span><span>
+</span><span>message = </span><span style="color:#bf616a;">greet</span><span>(&quot;</span><span style="color:#a3be8c;">Pawan</span><span>&quot;)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#d08770;">3</span><span>*message)
+</span><span>file = </span><span style="color:#96b5b4;">open</span><span>(&quot;</span><span style="color:#a3be8c;">content.txt</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">w</span><span>&quot;)
+</span><span>file.</span><span style="color:#bf616a;">write</span><span>(message)
+</span><span>
+</span><span>$ python app.py
+</span><span>My name is Pawan.My name is Pawan.My name is Pawan.
+</span><span>$ ls
+</span><span>app.py          content.txt
+</span><span>$ cat content.txt
+</span><span>My name is Pawan.
+</span></code></pre>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#By default all python function return `None` value, if no return value is specified.
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">greet</span><span>(</span><span style="color:#bf616a;">name</span><span>):
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">Hi </span><span>{name}&quot;)
+</span><span>    </span><span style="color:#65737e;"># return f&quot;Hello {name}&quot;
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">greet</span><span>(&quot;</span><span style="color:#a3be8c;">Pawan</span><span>&quot;))
+</span><span>
+</span><span>$ python app.py
+</span><span>Hi Pawan
+</span><span style="color:#d08770;">None
+</span></code></pre>
+<h4 id="keywords-arguments">Keywords arguments</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># Keywords arguments add more readability to the code
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">increment</span><span>(</span><span style="color:#bf616a;">number</span><span>, </span><span style="color:#bf616a;">by</span><span>):
+</span><span>    </span><span style="color:#b48ead;">return </span><span>number + by
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">increment</span><span>(</span><span style="color:#bf616a;">number</span><span>=</span><span style="color:#d08770;">3</span><span>, </span><span style="color:#bf616a;">by</span><span>=</span><span style="color:#d08770;">1</span><span>))
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">increment</span><span>(</span><span style="color:#d08770;">4</span><span>, </span><span style="color:#bf616a;">by</span><span>=</span><span style="color:#d08770;">1</span><span>))
+</span><span>
+</span><span>$ python app.py
+</span><span style="color:#d08770;">4
+</span><span style="color:#d08770;">5
+</span></code></pre>
+<h4 id="default-arguments">Default arguments</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">increment</span><span>(</span><span style="color:#bf616a;">number</span><span>, </span><span style="color:#bf616a;">by</span><span>=</span><span style="color:#d08770;">2</span><span>):
+</span><span>    </span><span style="color:#b48ead;">return </span><span>number + by
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">increment</span><span>(</span><span style="color:#d08770;">3</span><span>))     </span><span style="color:#65737e;">#by default 2 is added to it
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">increment</span><span>(</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">5</span><span>))
+</span><span style="color:#65737e;">#optional parameter(by) should come after required(number) parameter
+</span><span>
+</span><span>$ python app.py
+</span><span style="color:#d08770;">5
+</span><span style="color:#d08770;">8
+</span></code></pre>
+<h4 id="xargs">xargs</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">multiply</span><span>(*</span><span style="color:#bf616a;">numbers</span><span>):
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(numbers) </span><span style="color:#65737e;"># * results in tuple output
+</span><span>    total = </span><span style="color:#d08770;">1
+</span><span>    </span><span style="color:#b48ead;">for </span><span>number </span><span style="color:#b48ead;">in </span><span>numbers:
+</span><span>        total *= number
+</span><span>    </span><span style="color:#b48ead;">return </span><span>total
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">multiply</span><span>(</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">4</span><span>,</span><span style="color:#d08770;">5</span><span>))
+</span><span>
+</span><span>$ python app.py
+</span><span>(</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>)
+</span><span style="color:#d08770;">120
+</span></code></pre>
+<h4 id="xxargs">xxargs</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">user_info</span><span>(**</span><span style="color:#bf616a;">users</span><span>):     </span><span style="color:#65737e;"># ** results in dictionary object
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(users[&quot;</span><span style="color:#a3be8c;">name</span><span>&quot;])
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(users[&quot;</span><span style="color:#a3be8c;">id</span><span>&quot;])
+</span><span>
+</span><span style="color:#bf616a;">user_info</span><span>(</span><span style="color:#bf616a;">name</span><span>=&quot;</span><span style="color:#a3be8c;">Pawan</span><span>&quot;, </span><span style="color:#bf616a;">id</span><span>=</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#bf616a;">address</span><span>=&quot;</span><span style="color:#a3be8c;">Algiers</span><span>&quot;)
+</span><span style="color:#bf616a;">user_info</span><span>(</span><span style="color:#bf616a;">name</span><span>=&quot;</span><span style="color:#a3be8c;">Pawan1</span><span>&quot;, </span><span style="color:#bf616a;">id</span><span>=</span><span style="color:#d08770;">20</span><span>, </span><span style="color:#bf616a;">address</span><span>=&quot;</span><span style="color:#a3be8c;">Algiers</span><span>&quot;)
+</span><span>
+</span><span>$ python app.py
+</span><span>Pawan
+</span><span style="color:#d08770;">10
+</span><span>Pawan1
+</span><span style="color:#d08770;">20
+</span></code></pre>
+<h4 id="scope">scope</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#use global variable unless required
+</span><span>message = &quot;</span><span style="color:#a3be8c;">a</span><span>&quot;
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">fun</span><span>():
+</span><span>    </span><span style="color:#65737e;"># global message
+</span><span>    message = &quot;</span><span style="color:#a3be8c;">b</span><span>&quot;
+</span><span>
+</span><span style="color:#bf616a;">fun</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(message)
+</span><span>
+</span><span>$ python app.py
+</span><span>b        </span><span style="color:#65737e;"># results a  if `global message` is placed inside the fun():
+</span></code></pre>
+<h5 id="fizzbuzz-challenge">fizzbuzz challenge</h5>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>
+</span><span style="color:#65737e;"># if divisible by both 5 and 3   return fizz_buzz
+</span><span style="color:#65737e;"># if divisible only by 5 return fizz
+</span><span style="color:#65737e;"># if divisible only by 3 return buzz
+</span><span style="color:#65737e;"># else return the passed no.
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">fizz_buzz</span><span>(</span><span style="color:#bf616a;">input_no1</span><span>):
+</span><span>    input_no = </span><span style="color:#bf616a;">int</span><span>(input_no1)
+</span><span>    </span><span style="color:#65737e;"># if input_no % 5 == 0 and input_no % 3 == 0:
+</span><span>    </span><span style="color:#b48ead;">if </span><span>(input_no % </span><span style="color:#d08770;">5</span><span>) == </span><span style="color:#d08770;">0 </span><span>and (input_no % </span><span style="color:#d08770;">3 </span><span>== </span><span style="color:#d08770;">0</span><span>):
+</span><span>        </span><span style="color:#b48ead;">return  </span><span>&quot;</span><span style="color:#a3be8c;">fizz_buzz</span><span>&quot;
+</span><span>    </span><span style="color:#b48ead;">elif </span><span>input_no % </span><span style="color:#d08770;">5 </span><span>== </span><span style="color:#d08770;">0</span><span>:
+</span><span>        </span><span style="color:#b48ead;">return  </span><span>&quot;</span><span style="color:#a3be8c;">fizz</span><span>&quot;
+</span><span>    </span><span style="color:#b48ead;">elif </span><span>input_no % </span><span style="color:#d08770;">3 </span><span>== </span><span style="color:#d08770;">0</span><span>:
+</span><span>        </span><span style="color:#b48ead;">return  </span><span>&quot;</span><span style="color:#a3be8c;">buzz</span><span>&quot;
+</span><span>    </span><span style="color:#b48ead;">else</span><span>:
+</span><span>        </span><span style="color:#b48ead;">return  </span><span>input_no
+</span><span>
+</span><span style="color:#b48ead;">while </span><span style="color:#d08770;">True</span><span>:
+</span><span>    number = </span><span style="color:#96b5b4;">input</span><span>(&quot;</span><span style="color:#a3be8c;">insert a number:  </span><span>&quot;)
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">fizz_buzz</span><span>(number))
+</span><span>
+</span><span>$ python app.py
+</span><span>insert a number:  </span><span style="color:#d08770;">15
+</span><span>fizz_buzz
+</span><span>insert a number:  </span><span style="color:#d08770;">10
+</span><span>fizz
+</span><span>insert a number:  </span><span style="color:#d08770;">9
+</span><span>buzz
+</span><span>insert a number:  </span><span style="color:#d08770;">90
+</span><span>fizz_buzz
+</span><span>insert a number:  </span><span style="color:#d08770;">91
+</span><span style="color:#d08770;">91
+</span><span>insert a number:
+</span></code></pre>
+<h2 id="data-structures-and-algorithms">Data Structures and Algorithms</h2>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>letters = [&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">b</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">c</span><span>&quot;]
+</span><span>letters1 = [[</span><span style="color:#d08770;">0</span><span>,</span><span style="color:#d08770;">1</span><span>], [</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">3</span><span>], [&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &quot;</span><span style="color:#a3be8c;">b</span><span>&quot;]]
+</span><span>zeros = [</span><span style="color:#d08770;">0</span><span>,</span><span style="color:#d08770;">1</span><span>] * </span><span style="color:#d08770;">5
+</span><span>numbers = </span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">20</span><span>))
+</span><span>chars = </span><span style="color:#bf616a;">list</span><span>(&quot;</span><span style="color:#a3be8c;">Hello World</span><span>&quot;)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(letters))
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span style="color:#96b5b4;">print</span><span>(letters1)
+</span><span style="color:#96b5b4;">print</span><span>(zeros)
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span style="color:#96b5b4;">print</span><span>(chars)
+</span><span>
+</span><span>$ python app.py
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">list</span><span>&#39;&gt;
+</span><span>[&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;]
+</span><span>[[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>], [</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>], [&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;]]
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>]
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">7</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">11</span><span>, </span><span style="color:#d08770;">12</span><span>, </span><span style="color:#d08770;">13</span><span>, </span><span style="color:#d08770;">14</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">16</span><span>, </span><span style="color:#d08770;">17</span><span>, </span><span style="color:#d08770;">18</span><span>, </span><span style="color:#d08770;">19</span><span>]
+</span><span>[&#39;</span><span style="color:#a3be8c;">H</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">l</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">l</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">o</span><span>&#39;, &#39; &#39;, &#39;</span><span style="color:#a3be8c;">W</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">o</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">r</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">l</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;]
+</span></code></pre>
+<h3 id="accessing-list-items">Accessing List Items</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>letters = [&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">b</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">c</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">d</span><span>&quot;]
+</span><span style="color:#96b5b4;">print</span><span>(letters[</span><span style="color:#d08770;">0</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(letters[-</span><span style="color:#d08770;">1</span><span>])
+</span><span>letters[</span><span style="color:#d08770;">0</span><span>] = &quot;</span><span style="color:#a3be8c;">A</span><span>&quot;
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span style="color:#96b5b4;">print</span><span>(letters[</span><span style="color:#d08770;">0</span><span>:</span><span style="color:#d08770;">3</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(letters[:</span><span style="color:#d08770;">3</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(letters[</span><span style="color:#d08770;">2</span><span>:])
+</span><span>
+</span><span>numbers = </span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">20</span><span>))
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span style="color:#96b5b4;">print</span><span>(numbers[::</span><span style="color:#d08770;">2</span><span>])    </span><span style="color:#65737e;"># all the even numbers
+</span><span style="color:#96b5b4;">print</span><span>(numbers[::-</span><span style="color:#d08770;">1</span><span>])    </span><span style="color:#65737e;"># in reverse order
+</span><span>
+</span><span>$ python app.py
+</span><span>a
+</span><span>d
+</span><span>[&#39;</span><span style="color:#a3be8c;">A</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">A</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">A</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;]
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">7</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">11</span><span>, </span><span style="color:#d08770;">12</span><span>, </span><span style="color:#d08770;">13</span><span>, </span><span style="color:#d08770;">14</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">16</span><span>, </span><span style="color:#d08770;">17</span><span>, </span><span style="color:#d08770;">18</span><span>, </span><span style="color:#d08770;">19</span><span>]
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">12</span><span>, </span><span style="color:#d08770;">14</span><span>, </span><span style="color:#d08770;">16</span><span>, </span><span style="color:#d08770;">18</span><span>]
+</span><span>[</span><span style="color:#d08770;">19</span><span>, </span><span style="color:#d08770;">18</span><span>, </span><span style="color:#d08770;">17</span><span>, </span><span style="color:#d08770;">16</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">14</span><span>, </span><span style="color:#d08770;">13</span><span>, </span><span style="color:#d08770;">12</span><span>, </span><span style="color:#d08770;">11</span><span>, </span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">8</span><span>, </span><span style="color:#d08770;">7</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>]
+</span></code></pre>
+<h3 id="list-unpacking">List unpacking</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>numbers = [</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">4</span><span>,</span><span style="color:#d08770;">5</span><span>,</span><span style="color:#d08770;">6</span><span>]
+</span><span>first, second, *other = numbers
+</span><span style="color:#96b5b4;">print</span><span>(first)
+</span><span style="color:#96b5b4;">print</span><span>(second)
+</span><span style="color:#96b5b4;">print</span><span>(other)
+</span><span>numbers = [</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">4</span><span>,</span><span style="color:#d08770;">5</span><span>,</span><span style="color:#d08770;">6</span><span>]
+</span><span>first, *other, last = numbers
+</span><span style="color:#96b5b4;">print</span><span>(first)
+</span><span style="color:#96b5b4;">print</span><span>(last)
+</span><span style="color:#96b5b4;">print</span><span>(other)
+</span><span>
+</span><span>$ python3 app.py
+</span><span style="color:#d08770;">1
+</span><span style="color:#d08770;">2
+</span><span>[</span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>]
+</span><span style="color:#d08770;">1
+</span><span style="color:#d08770;">6
+</span><span>[</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>]
+</span></code></pre>
+<h3 id="looping-over-lists">Looping over Lists</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>letters = [&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">b</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">c</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;]
+</span><span style="color:#b48ead;">for </span><span>letter </span><span style="color:#b48ead;">in </span><span>letters:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(letter)
+</span><span>
+</span><span style="color:#b48ead;">for </span><span>letter </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">enumerate</span><span>(letters):     </span><span style="color:#65737e;"># enumerate() to retreive the index too
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(letter[</span><span style="color:#d08770;">0</span><span>], letter[</span><span style="color:#d08770;">1</span><span>])
+</span><span>
+</span><span style="color:#b48ead;">for </span><span>index, letter </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">enumerate</span><span>(letters):
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(index, letter)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>a
+</span><span>b
+</span><span>c
+</span><span>d
+</span><span style="color:#d08770;">0 </span><span>a
+</span><span style="color:#d08770;">1 </span><span>b
+</span><span style="color:#d08770;">2 </span><span>c
+</span><span style="color:#d08770;">3 </span><span>d
+</span><span style="color:#d08770;">0 </span><span>a
+</span><span style="color:#d08770;">1 </span><span>b
+</span><span style="color:#d08770;">2 </span><span>c
+</span><span style="color:#d08770;">3 </span><span>d
+</span></code></pre>
+<h3 id="adding-or-removing-items">Adding or Removing Items</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>letters = [&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">b</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">c</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;]
+</span><span>
+</span><span style="color:#65737e;">#add
+</span><span>letters.</span><span style="color:#bf616a;">append</span><span>(&quot;</span><span style="color:#a3be8c;">e</span><span>&quot;)
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span>letters.</span><span style="color:#bf616a;">insert</span><span>(</span><span style="color:#d08770;">0</span><span>, &quot;</span><span style="color:#a3be8c;">A</span><span>&quot;)   </span><span style="color:#65737e;">#specify index no.
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span>
+</span><span style="color:#65737e;">#Remove
+</span><span>letters.</span><span style="color:#bf616a;">pop</span><span>(</span><span style="color:#d08770;">0</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span>letters.</span><span style="color:#bf616a;">remove</span><span>(&quot;</span><span style="color:#a3be8c;">b</span><span>&quot;)    </span><span style="color:#65737e;">#removes the 1st appearance of &quot;b&quot;
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span style="color:#b48ead;">del </span><span>letters[</span><span style="color:#d08770;">0</span><span>:</span><span style="color:#d08770;">2</span><span>]
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span>letters.</span><span style="color:#bf616a;">clear</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">A</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;]
+</span><span>[&#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;]
+</span><span>[]
+</span></code></pre>
+<h3 id="finding-items">Finding Items</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>letters = [&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">b</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">c</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;,]
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(letters.</span><span style="color:#bf616a;">index</span><span>(&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;))
+</span><span style="color:#96b5b4;">print</span><span>(letters.</span><span style="color:#bf616a;">count</span><span>(&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;))
+</span><span>
+</span><span style="color:#b48ead;">if </span><span>&quot;</span><span style="color:#a3be8c;">e</span><span>&quot; in letters:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(letters.</span><span style="color:#bf616a;">index</span><span>(&quot;</span><span style="color:#a3be8c;">e</span><span>&quot;))
+</span><span>
+</span><span>$ python3 app.py
+</span><span style="color:#d08770;">3
+</span><span style="color:#d08770;">2
+</span></code></pre>
+<h3 id="sorting-lists">Sorting Lists</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>letters = [&quot;</span><span style="color:#a3be8c;">a</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">b</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">c</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">e</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">d</span><span>&quot;,]
+</span><span>letters.</span><span style="color:#bf616a;">sort</span><span>()   </span><span style="color:#65737e;">#permantently changes the letters
+</span><span style="color:#96b5b4;">print</span><span>(letters)
+</span><span>
+</span><span>numbers = [</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">9</span><span>]
+</span><span style="color:#65737e;"># numbers.sort()    # sorts in ascending order
+</span><span style="color:#65737e;"># numbers.sort(reverse=True)      #sorts in descending order
+</span><span style="color:#65737e;"># print(numbers)
+</span><span style="color:#65737e;"># sorted(numbers)     # doesn&#39;t change the original list
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">sorted</span><span>(numbers))
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">sorted</span><span>(numbers, </span><span style="color:#bf616a;">reverse</span><span>=</span><span style="color:#d08770;">True</span><span>))
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">d</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;]
+</span><span>[</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">20</span><span>]
+</span><span>[</span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">9</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">2</span><span>]
+</span><span>[</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">15</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">9</span><span>]
+</span></code></pre>
+<h4 id="sorting-complex-object">Sorting complex object</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>items = [
+</span><span>        (&quot;</span><span style="color:#a3be8c;">product1</span><span>&quot;, </span><span style="color:#d08770;">20</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">product2</span><span>&quot;, </span><span style="color:#d08770;">10</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">product3</span><span>&quot;, </span><span style="color:#d08770;">5</span><span>),
+</span><span>        ]
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">sort_item</span><span>(</span><span style="color:#bf616a;">item</span><span>):
+</span><span>    </span><span style="color:#b48ead;">return </span><span>item[</span><span style="color:#d08770;">1</span><span>]
+</span><span>
+</span><span>items.</span><span style="color:#bf616a;">sort</span><span>(</span><span style="color:#bf616a;">key</span><span>=sort_item)
+</span><span style="color:#96b5b4;">print</span><span>(items)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[(&#39;</span><span style="color:#a3be8c;">product3</span><span>&#39;, </span><span style="color:#d08770;">5</span><span>), (&#39;</span><span style="color:#a3be8c;">product2</span><span>&#39;, </span><span style="color:#d08770;">10</span><span>), (&#39;</span><span style="color:#a3be8c;">product1</span><span>&#39;, </span><span style="color:#d08770;">20</span><span>)]
+</span></code></pre>
+<h3 id="lambda-functions">Lambda functions</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>items = [
+</span><span>        (&quot;</span><span style="color:#a3be8c;">product1</span><span>&quot;, </span><span style="color:#d08770;">20</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">product2</span><span>&quot;, </span><span style="color:#d08770;">10</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">product3</span><span>&quot;, </span><span style="color:#d08770;">5</span><span>),
+</span><span>        ]
+</span><span>
+</span><span style="color:#65737e;"># items.sort(key=lambda parameters:expression)
+</span><span>items.</span><span style="color:#bf616a;">sort</span><span>(</span><span style="color:#bf616a;">key</span><span>=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">item</span><span>:item[</span><span style="color:#d08770;">1</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(items)
+</span><span>$ python3 app.py
+</span><span>[(&#39;</span><span style="color:#a3be8c;">product3</span><span>&#39;, </span><span style="color:#d08770;">5</span><span>), (&#39;</span><span style="color:#a3be8c;">product2</span><span>&#39;, </span><span style="color:#d08770;">10</span><span>), (&#39;</span><span style="color:#a3be8c;">product1</span><span>&#39;, </span><span style="color:#d08770;">20</span><span>)]
+</span><span>
+</span></code></pre>
+<h4 id="list-comprehension">list comprehension</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>things = [
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing1</span><span>&quot;, </span><span style="color:#d08770;">100</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing2</span><span>&quot;, </span><span style="color:#d08770;">300</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing3</span><span>&quot;, </span><span style="color:#d08770;">200</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing4</span><span>&quot;, </span><span style="color:#d08770;">60</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing5</span><span>&quot;, </span><span style="color:#d08770;">500</span><span>),
+</span><span>        ]
+</span><span>
+</span><span>comprehended = [thing[</span><span style="color:#d08770;">1</span><span>] </span><span style="color:#b48ead;">for </span><span>thing </span><span style="color:#b48ead;">in </span><span>things]
+</span><span style="color:#96b5b4;">print</span><span>(comprehended)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[</span><span style="color:#d08770;">100</span><span>, </span><span style="color:#d08770;">300</span><span>, </span><span style="color:#d08770;">200</span><span>, </span><span style="color:#d08770;">60</span><span>, </span><span style="color:#d08770;">500</span><span>]
+</span></code></pre>
+<h4 id="map-function">map function</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>things = [
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing1</span><span>&quot;, </span><span style="color:#d08770;">100</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing2</span><span>&quot;, </span><span style="color:#d08770;">200</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing3</span><span>&quot;, </span><span style="color:#d08770;">300</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing4</span><span>&quot;, </span><span style="color:#d08770;">400</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing5</span><span>&quot;, </span><span style="color:#d08770;">500</span><span>),
+</span><span>        ]
+</span><span>
+</span><span style="color:#65737e;"># prices = []
+</span><span style="color:#65737e;"># for thing in things:
+</span><span style="color:#65737e;">#     prices.append(thing[1])
+</span><span style="color:#65737e;"># print(prices)
+</span><span>
+</span><span>prices = </span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#96b5b4;">map</span><span>(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">thing</span><span>: thing[</span><span style="color:#d08770;">1</span><span>], things))     </span><span style="color:#65737e;"># same result as the list comprehension above
+</span><span style="color:#96b5b4;">print</span><span>(prices)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[</span><span style="color:#d08770;">100</span><span>, </span><span style="color:#d08770;">200</span><span>, </span><span style="color:#d08770;">300</span><span>, </span><span style="color:#d08770;">400</span><span>, </span><span style="color:#d08770;">500</span><span>]
+</span></code></pre>
+<h3 id="filter-function">filter function</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>things = [
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing1</span><span>&quot;, </span><span style="color:#d08770;">100</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing2</span><span>&quot;, </span><span style="color:#d08770;">300</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing3</span><span>&quot;, </span><span style="color:#d08770;">200</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing4</span><span>&quot;, </span><span style="color:#d08770;">60</span><span>),
+</span><span>        (&quot;</span><span style="color:#a3be8c;">thing5</span><span>&quot;, </span><span style="color:#d08770;">500</span><span>),
+</span><span>        ]
+</span><span>
+</span><span>filtered = </span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#96b5b4;">filter</span><span>(</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">thing</span><span>: thing[</span><span style="color:#d08770;">1</span><span>]&gt;=</span><span style="color:#d08770;">200</span><span>, things))
+</span><span style="color:#96b5b4;">print</span><span>(filtered)
+</span><span>
+</span><span>
+</span><span style="color:#65737e;"># # comprehended_output = [expression for item in items]
+</span><span style="color:#65737e;"># comprehended = [thing for thing in things if thing[1] &gt;= 200]   #get each item and return it then filter
+</span><span style="color:#65737e;"># print(comprehended)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[(&#39;</span><span style="color:#a3be8c;">thing2</span><span>&#39;, </span><span style="color:#d08770;">300</span><span>), (&#39;</span><span style="color:#a3be8c;">thing3</span><span>&#39;, </span><span style="color:#d08770;">200</span><span>), (&#39;</span><span style="color:#a3be8c;">thing5</span><span>&#39;, </span><span style="color:#d08770;">500</span><span>)]
+</span></code></pre>
+<h3 id="zipped-function">zipped function</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#combine multiple lists
+</span><span>list1 = [</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">30</span><span>]
+</span><span>list2 = [</span><span style="color:#d08770;">12</span><span>, </span><span style="color:#d08770;">22</span><span>, </span><span style="color:#d08770;">32</span><span>]
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#96b5b4;">zip</span><span>(list1, list2)))
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">list</span><span>(</span><span style="color:#96b5b4;">zip</span><span>(&quot;</span><span style="color:#a3be8c;">abcd</span><span>&quot;, list1, list2)))
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[(</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">12</span><span>), (</span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">22</span><span>), (</span><span style="color:#d08770;">30</span><span>, </span><span style="color:#d08770;">32</span><span>)]
+</span><span>[(&#39;</span><span style="color:#a3be8c;">a</span><span>&#39;, </span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">12</span><span>), (&#39;</span><span style="color:#a3be8c;">b</span><span>&#39;, </span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">22</span><span>), (&#39;</span><span style="color:#a3be8c;">c</span><span>&#39;, </span><span style="color:#d08770;">30</span><span>, </span><span style="color:#d08770;">32</span><span>)]
+</span></code></pre>
+<h3 id="stacks">Stacks</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>sessions = []
+</span><span>sessions.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">1</span><span>)
+</span><span>sessions.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">2</span><span>)
+</span><span>sessions.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">3</span><span>)
+</span><span>sessions.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">4</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(sessions)
+</span><span>
+</span><span>sessions.</span><span style="color:#bf616a;">pop</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(sessions)
+</span><span>sessions.</span><span style="color:#bf616a;">pop</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(sessions)
+</span><span>
+</span><span style="color:#65737e;"># 0, &quot;&quot;, []   are all falsy values, return false, if applied not operator, they return true
+</span><span style="color:#b48ead;">if </span><span>not sessions:        </span><span style="color:#65737e;">#checks whether sessions is empty or not
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">disable</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">last item on the list from right</span><span>&quot;, sessions[-</span><span style="color:#d08770;">1</span><span>])
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>]
+</span><span>[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>]
+</span><span>[</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>]
+</span><span>last item on the list </span><span style="color:#b48ead;">from </span><span>right </span><span style="color:#d08770;">2
+</span></code></pre>
+<h3 id="queues">Queues</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># from modules import class
+</span><span style="color:#b48ead;">from </span><span>collections </span><span style="color:#b48ead;">import </span><span>deque    
+</span><span>queue = </span><span style="color:#bf616a;">deque</span><span>([])
+</span><span>queue.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">1</span><span>)
+</span><span>queue.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">2</span><span>)
+</span><span>queue.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">3</span><span>)
+</span><span>queue.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">4</span><span>)
+</span><span>queue.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">5</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(queue)
+</span><span>
+</span><span>queue.</span><span style="color:#bf616a;">popleft</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(queue)
+</span><span>queue.</span><span style="color:#bf616a;">popleft</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(queue)
+</span><span>queue.</span><span style="color:#bf616a;">popleft</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(queue)
+</span><span>queue.</span><span style="color:#bf616a;">popleft</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(queue)
+</span><span>
+</span><span style="color:#b48ead;">if </span><span>not queue:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">queue is empty</span><span>&quot;)
+</span><span style="color:#b48ead;">else</span><span>:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(queue[-</span><span style="color:#d08770;">1</span><span>])
+</span><span>
+</span><span>$ python3 app.py
+</span><span style="color:#bf616a;">deque</span><span>([</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>])
+</span><span style="color:#bf616a;">deque</span><span>([</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>])
+</span><span style="color:#bf616a;">deque</span><span>([</span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>])
+</span><span style="color:#bf616a;">deque</span><span>([</span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>])
+</span><span style="color:#bf616a;">deque</span><span>([</span><span style="color:#d08770;">5</span><span>])
+</span><span style="color:#d08770;">5
+</span></code></pre>
+<h3 id="tuples">Tuples</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>dont_change_list = (</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">5</span><span>,</span><span style="color:#d08770;">6</span><span>,</span><span style="color:#d08770;">7</span><span>)
+</span><span style="color:#65737e;"># dont_change_list[0] = 5    Not allowed in tuple
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(dont_change_list))
+</span><span style="color:#96b5b4;">print</span><span>(dont_change_list)
+</span><span style="color:#96b5b4;">print</span><span>(dont_change_list[:</span><span style="color:#d08770;">2</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(dont_change_list[</span><span style="color:#d08770;">0</span><span>])
+</span><span style="color:#96b5b4;">print</span><span>(dont_change_list[-</span><span style="color:#d08770;">1</span><span>])
+</span><span>
+</span><span>list = [</span><span style="color:#d08770;">45</span><span>,</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">9</span><span>]
+</span><span>tuple = </span><span style="color:#bf616a;">tuple</span><span>(list)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(tuple))
+</span><span style="color:#96b5b4;">print</span><span>(tuple)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">tuple</span><span>&#39;&gt;
+</span><span>(</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">7</span><span>)
+</span><span>(</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>)
+</span><span style="color:#d08770;">1
+</span><span style="color:#d08770;">7
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">tuple</span><span>&#39;&gt;
+</span><span>(</span><span style="color:#d08770;">45</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">9</span><span>)
+</span></code></pre>
+<h4 id="swapping-variables">Swapping Variables</h4>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># x = 10
+</span><span style="color:#65737e;"># y = 20
+</span><span>x, y = </span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">20
+</span><span style="color:#65737e;"># z = x
+</span><span style="color:#65737e;"># x = y
+</span><span style="color:#65737e;"># y = z
+</span><span>
+</span><span>x, y = y, x    </span><span style="color:#65737e;">#right side is considered as tuple and tuple unpacking is done
+</span><span>a, b, c = </span><span style="color:#d08770;">20</span><span>, </span><span style="color:#d08770;">30</span><span>, </span><span style="color:#d08770;">40
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">x</span><span>&quot;, x)
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">y</span><span>&quot;, y)
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(a,b,c)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>x </span><span style="color:#d08770;">20
+</span><span>y </span><span style="color:#d08770;">10
+</span><span style="color:#d08770;">20 30 40
+</span></code></pre>
+<h3 id="arrays">Arrays</h3>
+<p><a href="https://docs.python.org/3/library/array.html">typecodes</a></p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#use arrays when using large set of data or when you encounter performance issues
+</span><span style="color:#65737e;">#use lists and tuples when possible
+</span><span>
+</span><span style="color:#b48ead;">from </span><span>array </span><span style="color:#b48ead;">import </span><span>array
+</span><span>
+</span><span>numbers = </span><span style="color:#bf616a;">array</span><span>(&quot;</span><span style="color:#a3be8c;">i</span><span>&quot;, [</span><span style="color:#d08770;">4</span><span>,</span><span style="color:#d08770;">5</span><span>,</span><span style="color:#d08770;">6</span><span>])   </span><span style="color:#65737e;"># should define the typecode(datatype)
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(numbers))
+</span><span>
+</span><span>numbers[</span><span style="color:#d08770;">0</span><span>] = </span><span style="color:#d08770;">10
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span>numbers.</span><span style="color:#bf616a;">append</span><span>(</span><span style="color:#d08770;">20</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span>numbers.</span><span style="color:#bf616a;">insert</span><span>(</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">40</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span>numbers.</span><span style="color:#bf616a;">remove</span><span>(</span><span style="color:#d08770;">5</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span>numbers.</span><span style="color:#bf616a;">pop</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(numbers)
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(numbers[</span><span style="color:#d08770;">1</span><span>]))
+</span><span style="color:#65737e;"># numbers[1] = &quot;Hello&quot;   #not allowed since typecode doesn&#39;t match
+</span><span>
+</span><span>$ python3 app.py
+</span><span style="color:#bf616a;">array</span><span>(&#39;</span><span style="color:#a3be8c;">i</span><span>&#39;, [</span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>])
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">array.array</span><span>&#39;&gt;
+</span><span style="color:#bf616a;">array</span><span>(&#39;</span><span style="color:#a3be8c;">i</span><span>&#39;, [</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>])
+</span><span style="color:#bf616a;">array</span><span>(&#39;</span><span style="color:#a3be8c;">i</span><span>&#39;, [</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">20</span><span>])
+</span><span style="color:#bf616a;">array</span><span>(&#39;</span><span style="color:#a3be8c;">i</span><span>&#39;, [</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">40</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">20</span><span>])
+</span><span style="color:#bf616a;">array</span><span>(&#39;</span><span style="color:#a3be8c;">i</span><span>&#39;, [</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">40</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">20</span><span>])
+</span><span style="color:#bf616a;">array</span><span>(&#39;</span><span style="color:#a3be8c;">i</span><span>&#39;, [</span><span style="color:#d08770;">10</span><span>, </span><span style="color:#d08770;">40</span><span>, </span><span style="color:#d08770;">6</span><span>])
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">int</span><span>&#39;&gt;
+</span></code></pre>
+<h3 id="sets">Sets</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>numbers = {}
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(numbers))
+</span><span>numbers = {</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">2</span><span>}
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(numbers))
+</span><span style="color:#65737e;"># print(numbers[0])    #indexing not allowed
+</span><span style="color:#b48ead;">for </span><span>i </span><span style="color:#b48ead;">in </span><span>numbers:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(i)
+</span><span style="color:#65737e;"># numbers[0] = 11     #not allowed for set object
+</span><span>numbers1 = {</span><span style="color:#d08770;">1</span><span>,</span><span style="color:#d08770;">2</span><span>,</span><span style="color:#d08770;">3</span><span>,</span><span style="color:#d08770;">4</span><span>,</span><span style="color:#d08770;">5</span><span>}
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">set</span><span>(numbers | numbers1))    </span><span style="color:#65737e;">#union
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">set</span><span>(numbers &amp; numbers1))    </span><span style="color:#65737e;">#intersection
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">set</span><span>(numbers - numbers1))    </span><span style="color:#65737e;">#difference
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">set</span><span>(numbers1 - numbers))    </span><span style="color:#65737e;">#difference
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">set</span><span>(numbers1 ^ numbers))    </span><span style="color:#65737e;">#either in 1st or 2nd set but not in both
+</span><span>
+</span><span>$ python3 app.py
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">dict</span><span>&#39;&gt;
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">set</span><span>&#39;&gt;
+</span><span style="color:#d08770;">1
+</span><span style="color:#d08770;">2
+</span><span>{</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>}
+</span><span>{</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>}
+</span><span style="color:#bf616a;">set</span><span>()
+</span><span>{</span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>}
+</span><span>{</span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">5</span><span>}
+</span></code></pre>
+<h3 id="dictionary">Dictionary</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># point = { &quot;x&quot;:1, &quot;y&quot;:2}
+</span><span style="color:#65737e;"># only immutable type for the keys like strings numbers
+</span><span style="color:#65737e;"># but value can be anything
+</span><span>point = </span><span style="color:#bf616a;">dict</span><span>(</span><span style="color:#bf616a;">x</span><span>=</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#bf616a;">y</span><span>=</span><span style="color:#d08770;">2</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">type</span><span>(point))
+</span><span style="color:#96b5b4;">print</span><span>(point)
+</span><span>
+</span><span>point[&quot;</span><span style="color:#a3be8c;">x</span><span>&quot;] = </span><span style="color:#d08770;">10
+</span><span>point[&quot;</span><span style="color:#a3be8c;">z</span><span>&quot;] = </span><span style="color:#d08770;">20
+</span><span style="color:#96b5b4;">print</span><span>(point)
+</span><span style="color:#b48ead;">if </span><span>&quot;</span><span style="color:#a3be8c;">k</span><span>&quot; in point:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(point[&quot;</span><span style="color:#a3be8c;">k</span><span>&quot;])
+</span><span style="color:#96b5b4;">print</span><span>(point.</span><span style="color:#bf616a;">get</span><span>(&quot;</span><span style="color:#a3be8c;">j</span><span>&quot;,</span><span style="color:#d08770;">0</span><span>))   </span><span style="color:#65737e;">#if doesn&#39;t exist, add value to it 
+</span><span style="color:#96b5b4;">print</span><span>(point)
+</span><span style="color:#b48ead;">del </span><span>point[&quot;</span><span style="color:#a3be8c;">z</span><span>&quot;]
+</span><span style="color:#96b5b4;">print</span><span>(point)
+</span><span>
+</span><span style="color:#b48ead;">for </span><span>key </span><span style="color:#b48ead;">in </span><span>point:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(key)
+</span><span>
+</span><span style="color:#b48ead;">for </span><span>key </span><span style="color:#b48ead;">in </span><span>point:
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(key, point[key])
+</span><span>
+</span><span style="color:#b48ead;">for </span><span>x,y </span><span style="color:#b48ead;">in </span><span>point.</span><span style="color:#bf616a;">items</span><span>():
+</span><span>    </span><span style="color:#96b5b4;">print</span><span>(x,y)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>&lt;</span><span style="background-color:#bf616a;color:#2b303b;">class</span><span> &#39;</span><span style="color:#a3be8c;">dict</span><span>&#39;&gt;
+</span><span>{&#39;</span><span style="color:#a3be8c;">x</span><span>&#39;: </span><span style="color:#d08770;">1</span><span>, &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;: </span><span style="color:#d08770;">2</span><span>}
+</span><span>{&#39;</span><span style="color:#a3be8c;">x</span><span>&#39;: </span><span style="color:#d08770;">10</span><span>, &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;: </span><span style="color:#d08770;">2</span><span>, &#39;</span><span style="color:#a3be8c;">z</span><span>&#39;: </span><span style="color:#d08770;">20</span><span>}
+</span><span style="color:#d08770;">0
+</span><span>{&#39;</span><span style="color:#a3be8c;">x</span><span>&#39;: </span><span style="color:#d08770;">10</span><span>, &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;: </span><span style="color:#d08770;">2</span><span>, &#39;</span><span style="color:#a3be8c;">z</span><span>&#39;: </span><span style="color:#d08770;">20</span><span>}
+</span><span>{&#39;</span><span style="color:#a3be8c;">x</span><span>&#39;: </span><span style="color:#d08770;">10</span><span>, &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;: </span><span style="color:#d08770;">2</span><span>}
+</span><span>x
+</span><span>y
+</span><span>x </span><span style="color:#d08770;">10
+</span><span>y </span><span style="color:#d08770;">2
+</span><span>x </span><span style="color:#d08770;">10
+</span><span>y </span><span style="color:#d08770;">2
+</span></code></pre>
+<h3 id="dictionary-comprehension">Dictionary comprehension</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>values = []
+</span><span style="color:#b48ead;">for </span><span>x </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">5</span><span>):
+</span><span>    values.</span><span style="color:#bf616a;">append</span><span>(x*</span><span style="color:#d08770;">2</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(values)
+</span><span>
+</span><span>values1 = [x*</span><span style="color:#d08770;">2 </span><span style="color:#b48ead;">for </span><span>x </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">5</span><span>)]
+</span><span style="color:#96b5b4;">print</span><span>(values1)
+</span><span>
+</span><span>values2 = {x*</span><span style="color:#d08770;">2 </span><span style="background-color:#bf616a;color:#2b303b;">for</span><span> x in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">5</span><span>)}
+</span><span style="color:#96b5b4;">print</span><span>(values2)
+</span><span>
+</span><span>values3 = {x:x*</span><span style="color:#d08770;">2 </span><span style="color:#b48ead;">for </span><span>x </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">5</span><span>)}
+</span><span style="color:#96b5b4;">print</span><span>(values3)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">8</span><span>]
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">8</span><span>]
+</span><span>{</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">8</span><span>}
+</span><span>{</span><span style="color:#d08770;">0</span><span>: </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>: </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">2</span><span>: </span><span style="color:#d08770;">4</span><span>, </span><span style="color:#d08770;">3</span><span>: </span><span style="color:#d08770;">6</span><span>, </span><span style="color:#d08770;">4</span><span>: </span><span style="color:#d08770;">8</span><span>}
+</span></code></pre>
+<h3 id="generator-expressions">Generator Expressions</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">from </span><span>sys </span><span style="color:#b48ead;">import </span><span>getsizeof
+</span><span>
+</span><span style="color:#65737e;"># values = (x*2 for x in range(10))
+</span><span style="color:#65737e;"># print(values)
+</span><span style="color:#65737e;"># for x in values:
+</span><span style="color:#65737e;">#     print(x)
+</span><span>
+</span><span>values = (x *</span><span style="color:#d08770;">2 </span><span style="color:#b48ead;">for </span><span>x </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">100000000</span><span>))
+</span><span style="color:#65737e;">#the getsizeof() method returns 64 bytes for an empty list and then 8 bytes for every additional element.
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">gen:</span><span>&quot;, </span><span style="color:#bf616a;">getsizeof</span><span>(values))
+</span><span style="color:#65737e;"># print(len(values))   #TypeError: object of type &#39;generator&#39; has no len()
+</span><span>
+</span><span>values1 = [x*</span><span style="color:#d08770;">2 </span><span style="color:#b48ead;">for </span><span>x </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">100000000</span><span>)]
+</span><span style="color:#96b5b4;">print</span><span>(&quot;</span><span style="color:#a3be8c;">list:</span><span>&quot;, </span><span style="color:#bf616a;">getsizeof</span><span>(values1))
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#96b5b4;">len</span><span>(values1))
+</span><span>
+</span><span>$ python3 app.py
+</span><span>gen: </span><span style="color:#d08770;">208
+</span><span>list: </span><span style="color:#d08770;">835128600
+</span><span style="color:#d08770;">100000000
+</span></code></pre>
+<h3 id="iterables-1">Iterables</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>values = [*</span><span style="color:#96b5b4;">range</span><span>(</span><span style="color:#d08770;">5</span><span>), *&quot;</span><span style="color:#a3be8c;">Hello</span><span>&quot;]    
+</span><span style="color:#65737e;">#range() and String are both iterable object
+</span><span style="color:#65737e;">#Unpacking operator works with iterables only
+</span><span style="color:#96b5b4;">print</span><span>(values)
+</span><span>
+</span><span>first = {&quot;</span><span style="color:#a3be8c;">x</span><span>&quot;: </span><span style="color:#d08770;">1</span><span>}
+</span><span>second = {&quot;</span><span style="color:#a3be8c;">x</span><span>&quot;: </span><span style="color:#d08770;">10</span><span>, &quot;</span><span style="color:#a3be8c;">y</span><span>&quot;:</span><span style="color:#d08770;">20</span><span>}
+</span><span>combined = {**first, **second, &quot;</span><span style="color:#a3be8c;">z</span><span>&quot;:</span><span style="color:#d08770;">1</span><span>}
+</span><span style="color:#96b5b4;">print</span><span>(combined)
+</span><span>
+</span><span>$ python3 app.py
+</span><span>[</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">4</span><span>, &#39;</span><span style="color:#a3be8c;">H</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">e</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">l</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">l</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">o</span><span>&#39;]
+</span><span>{&#39;</span><span style="color:#a3be8c;">x</span><span>&#39;: </span><span style="color:#d08770;">10</span><span>, &#39;</span><span style="color:#a3be8c;">y</span><span>&#39;: </span><span style="color:#d08770;">20</span><span>, &#39;</span><span style="color:#a3be8c;">z</span><span>&#39;: </span><span style="color:#d08770;">1</span><span>}
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <hr>
+  <footer>&copy pawan copyright 2022-2023</footer>
+</body>
+
+
+
+</html>

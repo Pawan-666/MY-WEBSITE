@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  
+  <title>CKAD</title>
+  
+  <title>MyBlog</title>
+  <!-- <link href="/style.css" rel="stylesheet"/> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <nav>
+</p>
+<p style="font-size:25px;"><a href="/blog">Blogs</a>        <a href="/contact">contact</a>
+    <!-- <a href="/blog">Blogs</a> -->
+    <!-- <a href="/">Home</a> -->
+    <!-- <a href="/about">About</a> -->
+    <!-- <a href="/contact">Contact</a> -->
+  <nav>
+  <hr>
+  <section class="section">
+    <div class="container">
+      
+<h1 class="title">
+  CKAD
+</h1>
+<p class="subtitle"><strong>2023-10-29</strong></p>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#References">References</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#k8s-architecture">k8s architecture</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#master-node-components">Master Plane Components</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#api-server">API server</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#controller-manager">Controller Manager</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#etcd">ETCD</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#scheduler">Scheduler</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#control-node-components">Control Plane Components</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#kubelet">Kubelet</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#kubeproxy">Kubeproxy</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#container-runtime">Container Runtime</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#pods">Pods</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#yaml-in-k8s">Yaml in k8s</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#replicasets">ReplicaSets</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#deployments">Deployments</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#services">Services</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#namespaces">Namespaces</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/ckad/#imperative-vs-declarative">Imperative vs Declarative</a></li>
+</ul>
+<h3 id="references">References</h3>
+<p>Below are some references:</p>
+<p>Github: https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master</p>
+<p>Certified Kubernetes Administrator: https://www.cncf.io/certification/cka/</p>
+<p>Exam Curriculum (Topics): https://github.com/cncf/curriculum</p>
+<p>Candidate Handbook: https://www.cncf.io/certification/candidate-handbook</p>
+<p>Exam Tips: http://training.linuxfoundation.org/go//Important-Tips-CKA-CKAD</p>
+<h3 id="k8s-architecture">k8s architecture</h3>
+<p><img src="/images/2023-11-02-20-13-35.png" alt="" /></p>
+<h4 id="master-node-components">Master node components</h4>
+<h5 id="api-server">API server</h5>
+<p>Entrypoint to K8s cluster. Everytime a kubectl command is run, it reaches the kube-apiserver first. We don't need to use kubectl command, we can directly invoke the api by sending POST request like this for creating a pod. Request is first authenticated then validated ..
+<img src="/images/2023-10-30-11-26-22.png" alt="" />
+If we set up cluster using kubeadm, then kube-apiserver-master is deployed as a POD in the kubesystem ns on master node.</p>
+<h5 id="controller-manager">Controller Manager</h5>
+<p>keeps track of what's happening on cluster.
+kube-controller-manager.service runs as service on bare metal install.
+<img src="/images/2023-10-31-10-11-52.png" alt="" /> 
+<code>cat /etc/system/system/kube-controller-manager .service</code>
+By default all the controllers are enabled but  we can choose to enable a select few.</p>
+<p>If kubeadm is used to set up cluster, kube-controller-manager-master runs as a pod. 
+<img src="/images/2023-10-31-10-13-40.png" alt="" />
+<code>cat /etc/system/system/kube-controller-manager.service</code>
+<code>ps -aux  grep kube-controller-manager</code></p>
+<p>Types of Controller Managers:</p>
+<ol>
+<li>Deployment-Controller</li>
+<li>Namespace-Controller</li>
+<li>Endpoint-Controller</li>
+<li>CronJob </li>
+<li>Job-Controller</li>
+<li>Service-Account-Controller</li>
+<li>Stateful-Set</li>
+<li>PV-Protection-Controller </li>
+<li>Replicaset</li>
+<li>Node-Controller :
+is responsible for monitoring the status of the nodes and taking necessary actions to keep the application running. It does that through the kube-apiserver.
+<img src="/images/2023-10-31-09-28-38.png" alt="" />
+It checks the status of the nodes every 5 seconds. If it stops receving heartbeat from the node, that node is marked unreacheable but it waits for 40 seconds before marking it unreacheable. After the node is marked unreacheable it gives it 5 minutes to come back up, if it doesn't it removes the pods assigned to that node and provisions them to the healthy nodes if the pods are part of the Replicaset. </li>
+<li>Replication-Controller :
+is responsible for monitoring the status of Replicasets and ensures desired no. of pods are running at all times within the sets. If a pod dies it creates another one.</li>
+<li>PV-Binder-Controller</li>
+</ol>
+<h5 id="etcd">ETCD</h5>
+<p>k8s backing store.
+Every change made to the cluster like Nodes,PODs,Configs,Secrets,Accounts,Roles,Bindings,Others are updated in etcd server.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>--advertise-client-urls https://${INTERNAL IP]:2379     # the socket on which etcd listens on the server.
+</span><span>If we set up cluster using kubeadm, then ETCD server is deployed as a POD in the kubesystem ns.
+</span></code></pre>
+<p>https://kodekloud.com/topic/etcd-commands-optional/
+<img src="/images/2023-10-30-11-09-20.png" alt="" /></p>
+<p>Inside the etcd pod:
+<img src="/images/2023-10-30-11-32-13.png" alt="" /></p>
+<h5 id="scheduler">Scheduler</h5>
+<p>Ensures pods placement. It is only responsible for deciding which pod goes on which node. It doesn't actually place/create pod on the nodes(Kubelet does that).<br />
+We may have pods with different resource requirement. We can have nodes in the cluster dedicated to certain applications. It uses a priority function to assign a score to the nodes on a scale of 0-10. Ex: the Scheduler calculates the amount of resources that would be free on the nodes after placing the pod on them.
+kube-scheduler.service runs as a daemon on bare-metal install Whereas kubeadm runs kube-scheduler pod on the master node.</p>
+<h4 id="control-node-components">Control Node Components</h4>
+<h5 id="kubelet">kubelet</h5>
+<p>The kubelet in the k8s worker node, registers the node with the k8s cluster. When it receives instructions to load a container or a POD on the node, it request the container runtime engine(docker/containerd) to pull the required image and run an instance. Kublet then continues to monitor the state of the POD and the containers in it and reports to the kube-api server on a timely basis.
+If we use kubeadm, it doesn't automaically depoly the kubelets, we must always manually install the kubelet on our worker nodes. we should run it as a service and we can see the running process as <code>ps -aux | grep kubelet</code></p>
+<h5 id="kubeproxy">Kubeproxy</h5>
+<p>Accepts/controls network connections to the node's pods. POD's network is a virtual network that spans across all the nodes in the cluster to which all the PODs connect to. IP address might be dynamic, thus for connecting pods across different nodes exposing with service is the best option. Different applications across different pods,nodes can access using the same service name. The service also gets an IP address assigned to it whenever a pod tries to reach the service using its IP/name, it forwards the traffic to the desired application. The service is not like  container/pod, so it doesn't have any interfaces or an actively listening process. It is a virtual component that only lives in the k8s memory. Kube-proxy is a process that runs on each node in the k8s cluster, its job is to look for new services and every time a new service is created it creates the appropriate rules on each node to forward traffic to those services to the backend pods. Ex: using IPtables rules, it creates an IPtables rule on each node in the cluster to forward traffic heading to the different IPs of the services to the IPs of the actual pods.
+kube-proxy.service is run or either as a  kube-proxy.. pod on kube-system namespace. It is actually depolyed as a daemon set, so a single POD is always depolyed on each node in the cluster.
+<img src="/images/2023-10-31-11-16-03.png" alt="" /></p>
+<h5 id="container-runtime">Container Runtime</h5>
+<p>Runtime that implements the CRI like CRI-O or containerD. 
+k8s introduced and interface called Container Runtime Interface called CRI. So CRI allowed any vendor to work as a container runtime for k8s as long as they adhere to the OCI(Open Container Initiative) standards. OCI contains </p>
+<ul>
+<li>imagespec: specifications on how an image should be built.</li>
+<li>runtimespec: standards on how any container runtime should be developed. 
+Docker came way before then CRI but it had containerD which is CRI compatible.</li>
+</ul>
+<h4 id="pods">Pods</h4>
+<p>k8s doesn't deploy containers directly on the worker nodes. The containers are encapsulated into a k8s object known as Pods. A Pod is a single instance of an application. Most of the time and for scaling purpose we deploy single container per pod but we can have multi-container pod too.
+<img src="/images/2023-10-31-20-52-27.png" alt="" />
+The 2 containers can communicate to each other by referring to each other as localhost since they share the same network space. They can easily share the same storage space as well. Multi-containers pod are a rare use case.
+<code>$cat nginx.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata:
+</span><span> name: my-nginx
+</span><span> labels:
+</span><span>  app : my_app
+</span><span>  tier: web
+</span><span>spec:
+</span><span> containers:
+</span><span> - name: nginx
+</span><span>   image: nginx
+</span></code></pre>
+<h5 id="yaml-in-k8s">Yaml in k8s</h5>
+<p>k8s uses .yml files as inputs for the creation of objects such as POD's, replicas, deployments, services, etc. All of these follow similar structure. K8s defination file always contains 4 top level fields.
+These are the root/top level properties and are mandatory.</p>
+<ul>
+<li>
+<p>apiVersion:   The version of the K8s API you're using to create the objects.</p>
+</li>
+<li>
+<p>kind:   The type of object we're trying to create.</p>
+</li>
+<li>
+<p>metadata:   Data about the object like its name, labels etc. This is in the form of a dictionary.
+<img src="/images/2023-10-31-21-13-53.png" alt="" />
+The no. of spaces before the properties name,labels doesn't matter but they should be the same as they are siblings
+The labels properties is a dictionary within the metadata dictionary. Under metadata we can specify name,labels or anything else that k8s expects to be under metadata. We can't add any other property as we wish under this. However, under labels we can have any kind of key:value pairs as we see fit.</p>
+</li>
+<li>
+<p>spec: The last section in the configuration file is the specification section called as spec. This contains different things for different objects.
+<img src="/images/2023-10-31-21-23-44.png" alt="" />
+spec is a dictionary. containers is list/array because we can have multiple containers within a pod. The - before the name indicates that this is the first item in the list. The item in the list is a dictionary which is name and image property here.
+<code>kubectl create -f pod-defintion.yml</code>   to make this object.
+<code>kubectl get pods</code>   to lists the available pods.
+<code>kubectl describe pod [pod_name]</code>  to see detailed information about the pod. </p>
+<ul>
+<li>When it was created</li>
+<li>What labels are assigned to it</li>
+<li>What docker containers are part of it </li>
+<li>The events associated with that pod</li>
+</ul>
+</li>
+</ul>
+<p>kubectl run --help<br />
+Create a new pod with the nginx image
+kubectl run nginx --image=nginx</p>
+<p>The READY column in <code>kubectl get pods</code> is the RUNNING_CONTAINERS/TOTAL_CONTAINERS in the pod.
+<img src="/images/2023-11-01-08-15-09.png" alt="" /></p>
+<h4 id="replicasets">ReplicaSets</h4>
+<p>Even if we have a single pod, Replication-Controller can automaically bring up the new pod when the existing one fails. Thus Replication-Controller ensures that the specified number of pods are running at all times even if it's just 1 or 100.
+<img src="/images/2023-11-01-18-18-16.png" alt="" />
+It helps us balance the load across multiple pods on different nodes as well as scale our application when the demand increases.
+<code>Replication-Controller and ReplicaSets</code>  both have the same purpose, but they are different. Replication-Controller is older technology which is being replaced by ReplicaSets and it is the recommended way to set up replication. There are minor differences in the way each works.</p>
+<p><code>$cat Replication-Controller.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1      
+</span><span>kind: ReplicationController
+</span><span>metadata:
+</span><span>    name: myapp-rc
+</span><span>    labels:
+</span><span>        app: myapp
+</span><span>        type: front-end
+</span><span>spec:
+</span><span>    template:               #metadata &amp; spec of the pod we want to replicate
+</span><span>        metadata:
+</span><span>         name: my-nginx
+</span><span>         labels:
+</span><span>          app : myapp
+</span><span>          type: front-end
+</span><span>        spec:
+</span><span>         containers:
+</span><span>         - name: nginx-container
+</span><span>           image: nginx
+</span><span>    replicas: 3
+</span></code></pre>
+<p><code>$ kubectl get rc</code></p>
+<p><code>$cat Replica-Set.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: apps/v1        
+</span><span>kind: ReplicaSet
+</span><span>metadata:
+</span><span>    name: myapp-rc
+</span><span>    labels:
+</span><span>        app: myapp
+</span><span>        type: front-end
+</span><span>spec:
+</span><span>    template:             
+</span><span>        metadata:
+</span><span>         name: my-nginx
+</span><span>         labels:
+</span><span>          app : myapp
+</span><span>          type: front-end
+</span><span>        spec:
+</span><span>         containers:
+</span><span>         - name: nginx-container
+</span><span>           image: nginx
+</span><span>    replicas: 3
+</span><span>    selector:
+</span><span>        matchLabels:
+</span><span>            type: front-end
+</span></code></pre>
+<p><code>selector</code> is the major difference between ReplicationController and Replicaset. It is an optional field for ReplicationController and when skipped it assumes it to be the same as the labels provided in the pod definition file. In case of Replicaset a user input is required for this property and has to be written in the form of matchLabels as shown above. The matchLabels <code>selector</code> simply matches the labels specified under it to the labels on the pod. The Replicaset <code>selector</code> provides many other options for matching labels that weren't available in a ReplicationController. Since it can create pods on the basis of labels matched for already created pod it might seem like we don't need the template section(pod's metadata &amp; spec) but if all the pods go down, Replicaset needs this to bring up new pods. If we want to increase the no. of replicas, we can either increase the no. in the file iteself and apply it again or use command <code>$kubectl scale --replicas=6 -f replicaset.yml</code>/<code>$kubectl scale --replicas=6 replicaset myapp-rc</code> but the command option doesn't changes the no. inside the yml file.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>`$ kubectl get replicaset`
+</span><span>    `$ kubectl get rs`
+</span><span>`$ kubectl describe rs [replicaset_name]`
+</span><span>`$ kubectl explain rs `
+</span><span>`$ kubectl delete replicaset [replicaset_name].`   # also deletes all underlying pods
+</span><span>`$kubectl scale rs new-replica-set --replicas=5`
+</span><span>    `$ kubectl edit replicaset [replicaset_name]`   # edit the rs configuration options
+</span><span>`$ kubectl replace -f replicaset.yml`   # replace or update the replicaset
+</span><span>    `$ kubectl apply -f replicaset.yml`   # replace or update the replicaset
+</span></code></pre>
+<h4 id="deployments">Deployments</h4>
+<p><img src="/images/2023-11-01-20-26-42.png" alt="" />
+The deployment provides us with the capability to upgrade the underlying instances seamlessly using rolling updates,
+undo changes, and pause and resume changes as required. The content of the deployment definition file is exactly similar as Replicaset file except for the kind.</p>
+<p><code>$cat deployment.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: apps/v1        
+</span><span>kind: Deployment
+</span><span>metadata:
+</span><span>    name: my-deployment
+</span><span>    labels:
+</span><span>        app: myapp
+</span><span>        type: front-end
+</span><span>spec:
+</span><span>    template:             
+</span><span>        metadata:
+</span><span>         name: my-nginx
+</span><span>         labels:
+</span><span>          app : myapp
+</span><span>          type: front-end
+</span><span>        spec:
+</span><span>         containers:
+</span><span>         - name: nginx-container
+</span><span>           image: nginx
+</span><span>    replicas: 3
+</span><span>    selector:
+</span><span>        matchLabels:
+</span><span>            type: front-end
+</span></code></pre>
+<p><img src="/images/2023-11-01-20-41-15.png" alt="" /></p>
+<h4 id="services">Services</h4>
+<p>k8s services enable communication between various components within and outside of the application.
+<img src="/images/2023-11-02-07-59-15.png" alt="" />
+Services enable loose-coupling of microservices in our application</p>
+<p>Services types:
+<img src="/images/2023-11-02-08-08-51.png" alt="" /></p>
+<ol>
+<li>NodePort service
+<img src="/images/2023-11-02-08-02-24.png" alt="" />
+Service listens on the port of the Node and forwards traffic to the pod.
+<img src="/images/2023-11-02-08-11-08.png" alt="" />
+The port on the web-server pod is called target port, because that is where the service forwards the request to.
+The second port is port on the service itself which is simply referred to as the port. The service is in fact like a virtual server inside the node. Inside the cluster it has its own IP address, that IP address is called the cluster IP of the service.
+The third one is port on the node itself which we use to access the web server externally. NodePort valid range by default is from 30,000 to 32,767.</li>
+</ol>
+<p>pod-definitionym1
+apiVersion: v1
+kind: Pod
+metadata:
+name: myapp-pod
+labels:
+spec:
+containers:</p>
+<ul>
+<li>name: nqinx-container
+image: nginx</li>
+</ul>
+<p><code>$cat nodeport.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata:
+</span><span>    name: myapp-pod
+</span><span>    labels:
+</span><span>        app: myapp
+</span><span>        type: frontend
+</span><span>spec:
+</span><span>    containers:
+</span><span>    - name: nginx-container
+</span><span>      image: nginx
+</span><span>
+</span><span>---
+</span><span>apiVersion: v1
+</span><span>kind: Service
+</span><span>metadata:
+</span><span>    name: myapp-nodeport-service
+</span><span>spec:
+</span><span>    type: NodePort
+</span><span>    ports:
+</span><span>      - targetPort: 80
+</span><span>        port: 80
+</span><span>        nodePort: 30008
+</span><span>    selector:
+</span><span>        app: myapp
+</span><span>        type: frontend
+</span></code></pre>
+<p>Out of all the ports, <code>port</code> is the only mandatory field, If we don't provide the targetPort it is assumed to be the same as port and if we don't provide the nodePort a free port in the valid range is automaically allocated. ports section under spec is an array thus we can have multiple such port mappings within a single service. we could have 100s of pods running thus selector is needed to specify for which pod we're mapping the ports.
+<img src="/images/2023-11-02-09-03-04.png" alt="" />
+When we have multiple pods running, the labels of pod and selector of service should match and then the service selects all the matched labels pods and selects them as endpoints to forward external  requests coming from the user.
+<img src="/images/2023-11-02-09-06-45.png" alt="" />
+<img src="/images/2023-11-02-09-08-18.png" alt="" />
+Thus the service acts as a built-in LoadBalancer.</p>
+<ol start="2">
+<li>ClusterIP 
+Service creates a virtual IP inside the cluster to enable communication between different services,such as a set of front-end servers to a set of back-end servers.
+<img src="/images/2023-11-02-10-02-01.png" alt="" /></li>
+</ol>
+<p><code>$cat clusterip.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata:
+</span><span>    name: myapp-pod
+</span><span>    labels:
+</span><span>        app: myapp
+</span><span>        type: frontend
+</span><span>spec:
+</span><span>    containers:
+</span><span>    - name: nginx-container
+</span><span>      image: nginx
+</span><span>
+</span><span>---
+</span><span>apiVersion: v1
+</span><span>kind: Service
+</span><span>metadata:
+</span><span>    name: back-end
+</span><span>spec:
+</span><span>    type: ClusterIP   
+</span><span>    ports:
+</span><span>        targetPort: 80
+</span><span>        port: 80
+</span><span>    selector:
+</span><span>        app: myapp
+</span><span>        type: frontend
+</span></code></pre>
+<p>ClusterIP is the default service if the type isn't provided.
+<img src="/images/2023-11-02-11-03-29.png" alt="" /></p>
+<ol start="3">
+<li>LoadBalancer
+provisions a load balancer for our application in supported cloud providers.
+<img src="/images/2023-11-02-11-12-56.png" alt="" /></li>
+</ol>
+<p>If we do bare metal install, we need to create a new vm to work it as a loadbalancer for sending the traffic to other nodes but Cloud providers encapsulate this and provide native support for such integration.</p>
+<p><code>$cat loadbalancer.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Service
+</span><span>metadata:
+</span><span>    name: myapp-service
+</span><span>spec:
+</span><span>    type: LoadBalancer
+</span><span>    ports:
+</span><span>        - targetPort: 80
+</span><span>          port: 80
+</span><span>          nodePort: 30008
+</span></code></pre>
+<h4 id="namespaces">Namespaces</h4>
+<p>Default namespace alongside other namespaces is setup by k8s when the cluster is first set up. It creates pods,services for its internal purpose such as those required by the networking solution, the dns service etc. To isolate these from the user and to prevent us from accidentally deleting/modifying these services k8s creates them under another namespaces created at cluster startup named kube-system. A 3rd namespace created by k8s automaically is called kube-public. This is where resources that should be made available to all users are created. 
+When we grow and use a k8s cluster for enterprise or production purposes we should consider using/creating our own namespaces. Ex: We want to use the same cluster for both dev,prod environment but at the same time isolate the resources between them, we can create a different namespaces for each of them. This way while working in the dev environment we don't accidentally modify a resources in production. Each of these namespace can have its own set of policies that define who can do what. We can also assign quote of resources to each of these namespaces that way each namespace is guaranteed a certain amount and does not use more that it's allowed. The resources within a namespace can refer to each other simply by their names. 
+<img src="/images/2023-11-02-16-54-12.png" alt="" />
+To connect to the resources on another namespace from the default namespace, we have to use the below format.
+<img src="/images/2023-11-02-16-54-44.png" alt="" /></p>
+<p>If we want to make pods/deployment in a specific namespace, we can add <code>namespace:</code> section in the <code>metadata:</code> section on the file.</p>
+<h4 id="creating-namespace">Creating namespace</h4>
+<p><code>$ kubectl create namespace dev</code>   # using ad-hoc command</p>
+<p><code>$ cat namespace.yml</code>    # through a file</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Namespace
+</span><span>metadata:
+</span><span>    name: dev
+</span></code></pre>
+<p><code>$ kubectl get all -n [namespace_name]</code>   # show resources from another namespace
+<code>$ kubectl get pod -n [namespace_name]</code>   # show resources from another namespace
+<code>$ kubectl get all --all-namespaces</code>      # show resources from all namespaces
+<code>$ kubectl get pods --all-namespaces</code>
+<code>$ kubectl get pods -A</code></p>
+<p><code>$ kubectl config set-context $(kubectl config current-context) --namespace=dev</code>
+<code>$ kubectl config set-context $(kubectl config current-context) -n dev</code>   # change the current-context
+<code>$ kubectl config current-context</code>    # shows current context</p>
+<h5 id="resourcequota">ResourceQuota</h5>
+<p>Allocating resourcequota to a namespace
+<code>$ cat resourcequota.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: ResourceQuota
+</span><span>metadata:
+</span><span>    name: compute-data
+</span><span>    namespace: dev
+</span><span>spec:
+</span><span>    hard:
+</span><span>        pods: &quot;10&quot;
+</span><span>        requests.cpu: &quot;4&quot;
+</span><span>        requests.memory: 5Gi
+</span><span>        limits.cpu: &quot;10&quot;
+</span><span>        limits.memory: 10Gi
+</span></code></pre>
+<h4 id="imperative-vs-declarative">Imperative vs Declarative</h4>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>kubectl run nginx --image=nginx     # create an nginx pod
+</span><span>kubectl run nginx --image=nginx --dry-run=client # dry-run an nginx pod
+</span><span>kubectl run nginx --image=nginx --dry-run=client -o yaml # create an nginx pod manifest yml file
+</span><span>    kubectl run nginx --image=nginx --dry-run=client -o yaml &gt;&gt; nginx_pod.yml
+</span><span>
+</span><span>kubectl create deployment --image=nginx nginx --dry-run=client -o yaml
+</span><span>kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml
+</span></code></pre>
+<h5 id="kubectl-apply">kubectl apply</h5>
+<p>kubectl apply command is used to manage object declaratively. The apply command takes into consideration of the local configuration file, the live object definition on k8s and the last applied configuration, before making decision on what changes are to be made. When we run the apply command, if the object is'nt there already it is created. When the object is created, an object configuration similar to what we created locally is created in k8s but with additional fields to store status of the object. This is the live configuration of the object on the K8s cluster. This is how k8s internally stores information about an object no matter what approach you use to create the object. But when we use <code>kubectl apply -f ..</code> it does something a bit more, the yaml version of the local object configuration file is converted to a JSON format and it is then stored as the last applied configuration.
+<img src="/images/2023-11-02-20-27-14.png" alt="" />
+Going forward, for any updates to the object, all the three are compared to identify what changes are to be made on the live object.
+Ex: when the nginx image is updated to 1.19 in our local file and run the apply command, this value is compared with the value in the live configuration, if there's a difference the live configuration is updated with the new value. After any change the last applied JSON format is always updated to the latest, so that it's always up-to-date.
+<img src="/images/2023-11-02-20-31-35.png" alt="" />
+Why do we really need the last applied configuration?
+If a field was deleted, ex: type label was deleted, and now when we run the apply command, we see that the last applied configuration had a label, but it's not present in the local configuration. This means that the field needs to be removed from the live configuration. If a field was present in the live configuration and not present in the local or the last applied configuration then it will be left as is.
+<img src="/images/2023-11-02-20-36-33.png" alt="" />
+If a field is missing from the local file, and it is present in the last applied configuration, that means that in the previous step or whenever the last time we ran the apply command, that particular field was there, and it is now being removed. The last applied configuration helps us figure out what fields have been removed from local file. That field is then removed from the actual live configuration.</p>
+<p><img src="/images/2023-11-02-20-41-40.png" alt="" />
+<a href="https://kubernetes.io/docs/tasks/manage-kubernetes-objects/declarative-config/">docs</a></p>
+<p>The JSON file that has the last applied configuration is stored on the live object configuration on the k8s cluster itself as an annotation named last applied configuration.
+<img src="/images/2023-11-02-20-45-18.png" alt="" /></p>
+<p>The above steps are only done when we use the <code>apply</code> command. The create,replace commands do not store the last applied configuration like this. So we shouldn't mix the Imperative and Declarative approaches while managing k8s objects.</p>
+<h4 id="scheduling">Scheduling</h4>
+<h5 id="manual-scheduling">manual scheduling</h5>
+<p>Every pod has a field called NodeName that, by default isn't set. We don't typically specify this field when we create the manifest file, k8s adds it automatically. The scheduler goes through all the pods and looks for those that do not have this property set. Those are the candidates for Scheduling. It then identifies the right node for the pod, by runnning the Scheduling algorithm.
+Once identified it schedules the POD on the Node by setting the nodeName: property to the name of the node by creating a binding object.
+<img src="/images/2023-11-03-10-11-08.png" alt="" />
+If there's no scheduler to monitor and schedule node, the pods continue to be in a pending state.
+<img src="/images/2023-11-03-10-13-10.png" alt="" />
+Well, we can manually assign  pods to node ourself using nodeName: property in the pod-specification.yml file w/o using the scheduler. We can only specify the node name at creation time. If the pod is already created we can't assign the pod to a node we want since k8s won't allow us to modify the nodeName: property of a pod. 
+Another way to assign a node to an existing pod is to create a binding object and send a post request to the pod binding API, thus mimicking what the actual scheduler does. 
+<img src="/images/2023-11-03-10-19-54.png" alt="" />
+In the binding object you specify a target node with the name of the node. Then send a post request to the pods binding API with the data set to the binding object in a JSON format.</p>
+<p><code>$ cat pod.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>---
+</span><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata:
+</span><span>  name: nginx
+</span><span>spec:
+</span><span>  containers:
+</span><span>  -  image: nginx
+</span><span>     name: nginx
+</span><span>  nodeName: controlplane    # It can be any nodes available
+</span></code></pre>
+<p><code>kubectl replace --force -f pod.yml</code>  # if we want to schedule pod to another node, we have to delete it 1st and place it on another node, since pod are just containers running in linux system, which are basically processes and we can't simply move a running process from one machine to another.</p>
+<h4 id="labels-and-selectors">Labels and selectors</h4>
+<p>Labels and selectors are a standard method to group things together. For each objects we can attach label as many as our needs. k8s objects use labels and selectors internally to connect different objects together.
+Ex: To create a ReplicaSet consisting of 3 different Pods, we first label the Pod definition and use selector in a ReplicaSet to group the Pods. In a rs we have labels defined in 2 places, one for rs itself(inside 1st metadata section) another for the pod inside the rs(inside the template section).  The labels of the rs will be used if we were to configure some other object to discover the rs.
+<img src="/images/2023-11-03-21-06-54.png" alt="" />
+Since we want the rs to discover the pod we configure the selector field under the rs spec: to match the labels defined on the Pod. A single label will do if it matches correctly. However, if we feel there could be other pods with the same label, but with a different function, then we should specify both the labels to ensure that the right Pods are discovered by the ReplicaSet. On creation, if the labels match, the ReplicaSet is created successfully.
+<img src="/images/2023-11-03-21-12-20.png" alt="" />
+It works the same for other objects like service, When a service is created, it uses the selector defined in the service definition file to match the labels set on the Pods in the rs definition file.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>k get pods --show-labels        #shows all the labels associated
+</span><span>k get pods -l env=dev
+</span><span>k get all --no-headers | wc -l
+</span></code></pre>
+<h5 id="annotations">Annotations</h5>
+<p>While labels and selectors are used to group and select objects, annotations are used to record other details for informatory purpose.
+<img src="/images/2023-11-04-10-46-06.png" alt="" />
+Ex: tool details like name, version, build information, or contact details, phone numbers, email_ids etc. that may be used for some kind of integration purpose.</p>
+
+
+    </div>
+  </section>
+  <hr>
+  <footer>&copy pawan copyright 2022-2023</footer>
+</body>
+
+
+
+</html>
