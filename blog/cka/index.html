@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta charset="utf-8">
   
-  <title>CKAD</title>
+  <title>CKA</title>
   
   <title>MyBlog</title>
   <!-- <link href="/style.css" rel="stylesheet"/> -->
@@ -28,40 +28,53 @@
     <div class="container">
       
 <h1 class="title">
-  CKAD
+  CKA
 </h1>
 <p class="subtitle"><strong>2023-10-29</strong></p>
 <ul>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#References">References</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#k8s-architecture">k8s architecture</a>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#References">References</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#k8s-architecture">k8s architecture</a>
 <ul>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#master-node-components">Master Plane Components</a>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#master-node-components">Master Plane Components</a>
 <ul>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#api-server">API server</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#controller-manager">Controller Manager</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#etcd">ETCD</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#scheduler">Scheduler</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#api-server">API server</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#controller-manager">Controller Manager</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#etcd">ETCD</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#scheduler">Scheduler</a></li>
 </ul>
 </li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#control-node-components">Control Plane Components</a>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#control-node-components">Control Plane Components</a>
 <ul>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#kubelet">Kubelet</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#kubeproxy">Kubeproxy</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#container-runtime">Container Runtime</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#kubelet">Kubelet</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#kubeproxy">Kubeproxy</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#container-runtime">Container Runtime</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#pods">Pods</a>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#pods">Pods</a>
 <ul>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#yaml-in-k8s">Yaml in k8s</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#yaml-in-k8s">Yaml in k8s</a></li>
 </ul>
 </li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#replicasets">ReplicaSets</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#deployments">Deployments</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#services">Services</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#namespaces">Namespaces</a></li>
-<li><a href="https://pawanchhetri.com.np/blog/ckad/#imperative-vs-declarative">Imperative vs Declarative</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#replicasets">ReplicaSets</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#deployments">Deployments</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#services">Services</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#namespaces">Namespaces</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#imperative-vs-declarative">Imperative vs Declarative</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#scheduling">Scheduling</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#labels-and-selectors">Labels and selectors</a>
+<ul>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#annotations">Annotations</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#taints-and-tolerations">Taints and Tolerations</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#node-selectors">Node Selectors</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#node-affinity">Node Affinity</a></li>
+</ul>
+</li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#resource-limit">Resource Limit</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#daemonset">DaemonSet</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#static-pods">Static pods</a></li>
+<li><a href="https://pawanchhetri.com.np/blog/cka/#multiple-schedulers">Multiple Schedulers</a></li>
 </ul>
 <h3 id="references">References</h3>
 <p>Below are some references:</p>
@@ -495,6 +508,298 @@ It works the same for other objects like service, When a service is created, it 
 <p>While labels and selectors are used to group and select objects, annotations are used to record other details for informatory purpose.
 <img src="/images/2023-11-04-10-46-06.png" alt="" />
 Ex: tool details like name, version, build information, or contact details, phone numbers, email_ids etc. that may be used for some kind of integration purpose.</p>
+<h5 id="taints-and-tolerations">Taints and Tolerations</h5>
+<p>Sometimes we want to set certain pods to certain nodes only, This allows us to set restrictions on nodes, pods can be scheduled. When the pods are created the Scheduler tries to place the pods on all available worker nodes to balance them out equally if no restrictions/limitations are set.
+Taints are set on nodes and tolerations are set on pods.
+<img src="/images/2023-11-05-17-58-37.png" alt="" />
+Node1 is tainted blue that means no pods can be scheduled on it unless they have tolerations to blue. 
+<img src="/images/2023-11-05-17-58-16.png" alt="" />
+The final scheduling works as above since only podD is tolerant to blue, When the scheduler tries to place podA-C on Node1 it goes through since Node1 can only accept pods that can tolerate the taint blue. 
+<img src="/images/2023-11-05-18-06-36.png" alt="" />
+NoSchedule means don't put the pods on that node if no toleration is matched, PreferNoSchedule means the system wil try to avoid placing a pod on that node but this is not guaranteed and NoExcute means the new pods will not be scheduled on the node and existing pods on that node if any will get evicted if they do not tolerate the taint(these pods may have been scheduled on node before the taints was applied to that node.</p>
+<p><code>$ cat toleration.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata: 
+</span><span>    name: myapp-pod
+</span><span>spec:
+</span><span>    containers:
+</span><span>    - name: nginx-container
+</span><span>      image: nginx
+</span><span>
+</span><span>    tolerations:
+</span><span>    - key: &quot;app&quot;
+</span><span>      operator: &quot;Equal&quot;
+</span><span>      value: &quot;blue&quot;
+</span><span>      effect: &quot;NoSchedule&quot;
+</span></code></pre>
+<p>Taints and Tolerations does not tell the pod to go to a particular node, instead it tells the node to only accept pods with certain toleration. If our requirement is to restrict a pod to certain nodes, it is achieved through another concept called Node Affinity.
+K8s master node is technically just another node that has all the capabilities of hosting pods plus it runs all the management software. But the Scheduler does not schedule any pods on the master node because a taint is set up on the master node automaically when the cluster is first set up which automatically prevents any pods being scheduled on this node.
+<code>$ kubectl describe node kubemaster | grep Taint</code></p>
+<p><img src="/images/2023-11-05-18-46-40.png" alt="" />
+To untaint a node add - at the end to the grep value of Taint.</p>
+<h5 id="node-selectors">Node Selectors</h5>
+<p>We have a Node1 with higher resources and have pods with different resources requirement and we would want the pod which requires more resource to be in the Node1. But as of now we could have the pod3(highest resource requirement) on node2-3 because of default scheduling.
+<img src="/images/2023-11-05-19-23-16.png" alt="" />
+We can set limitations on the pods so that they only run on particular nodes. We can use nodeSelector which is simplest/easier but less flexible method.</p>
+<p><code>$ kubectl label nodes [node_name] key:value</code>
+<code>$ kubectl label nodes node-1 size=Large</code></p>
+<p><code>$ cat node-selector.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata: 
+</span><span>    name: myapp-pod
+</span><span>spec:
+</span><span>    containers:
+</span><span>    - name: data-processor
+</span><span>      image: data-processor
+</span><span>
+</span><span>    nodeSelector:
+</span><span>      size: Large
+</span></code></pre>
+<p>The key:value pair  size: Large are labels assigned to the nodes the scheduler uses these labels to match and identify the right nodes to place to pods on. Node labels should be defined prior to creating this pod.
+<img src="/images/2023-11-05-21-08-29.png" alt="" /></p>
+<h5 id="node-affinity">Node Affinity</h5>
+<p>ensures that pods are hosted on particular nodes. We can use advanced expressions(OR,NOT) unlike nodeSelector.</p>
+<p><code>$ cat node-affinity.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: Pod
+</span><span>metadata: 
+</span><span>    name: myapp-pod
+</span><span>spec:
+</span><span>    containers:
+</span><span>    - name: data-processor
+</span><span>      image: data-processor
+</span><span>      imagePullPolicy: IfNotPresent
+</span><span>
+</span><span>    affinity:
+</span><span>        nodeAffinity:
+</span><span>            requiredDuringSchedulingIgnoredDuringExecution:
+</span><span>                nodeSelectorTerms:
+</span><span>                - matchExpressions:
+</span><span>                    - key: size
+</span><span>                      operator: In
+</span><span>#                     operator: NotIn
+</span><span>                      values:
+</span><span>                      - Large 
+</span><span>#                     - Medium
+</span></code></pre>
+<p>This exactly does the same thing as node-selector.yml file.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>....
+</span><span>                - matchExpressions:
+</span><span>                    - key: size
+</span><span>                      operator: Exists
+</span></code></pre>
+<p>The exists operator will simply check if the label size exists on the nodes, if the label is matched, value doesn't need to be match the values as it doesn't compare the values.</p>
+<p>What if there are no nodes with the label called size?
+What if someone changes the label of the node at a future point?
+These are defined by the nodeAffinity: section under affinity:</p>
+<p>nodeAffinity Types </p>
+<p>Available:</p>
+<ul>
+<li>requiredDuringSchedulingIgnoredDuringExecution:
+If the  matching node doesn't exist the pod will not be scheduled.</li>
+<li>preferredDuringSchedulingIgnoredDuringExecution:
+If the  matching node doesn't exist the Scheduler will ignore the affinity: rules and the pod will not be scheduled on any available node. The IgnoredDuringExecution part means that the already running/scheduled pod aren't affected by the changes in the nodeAffinity afterwards.</li>
+</ul>
+<p>Planned:</p>
+<ul>
+<li>requiredDuringSchedulingRequiredDuringExecution</li>
+<li>preferredDuringSchedulingRequiredDuringExecution: 
+RequiredDuringExecution will evict any pods that are running on nodes that do not meet affinity rules.</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: apps/v1
+</span><span>kind: Deployment
+</span><span>metadata:
+</span><span>  name: blue
+</span><span>spec:
+</span><span>  template:
+</span><span>    metadata:
+</span><span>      name: my-replica
+</span><span>      labels:
+</span><span>        type: web-server
+</span><span>    spec:
+</span><span>      containers:
+</span><span>        - name: nginx
+</span><span>          image: nginx
+</span><span>      affinity:
+</span><span>        nodeAffinity:
+</span><span>            requiredDuringSchedulingIgnoredDuringExecution:
+</span><span>                nodeSelectorTerms:
+</span><span>                - matchExpressions:
+</span><span>                    - key: color
+</span><span>                      operator: In
+</span><span>                      values:
+</span><span>                      - blue
+</span><span>
+</span><span>  replicas: 3
+</span><span>  selector:
+</span><span>    matchLabels:
+</span><span>      type: web-server
+</span><span>~                             
+</span></code></pre>
+<p>To guarantee that the pods will only be scheduled on prefered  nodes we can use the combination of taints/tolerations and node affinity rules can be used to completely dedicate nodes for specific pods. We first use taints/tolerations to prevent other pods from being placed on our nodes and then we use nodeAffinity to prevent our pods being placed on other nodes.</p>
+<h4 id="resource-limit">Resource Limit</h4>
+<p>Every Pod consumes a set of resources(CPU and MEM) available on the node. The scheduler takes into consideration, the amount of resources required by a POD and those available on the Nodes. If there is no sufficient resources available on any nodes, k8s holds back scheduling the POD and the POD remains in pending state. 
+By default a pod can consume all the resources available on the node which could suffocate the native processes on the node or other pods. We can specify the amount of CPU,MEM required for the pod. This is called as Resource Requests. This is the minimum amount required by the pod while scheduling.</p>
+<p><code>$ cat resources_requests.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind:
+</span><span>metadata:
+</span><span>    name: simple-webapp
+</span><span>    labels:
+</span><span>        name: simple-webapp
+</span><span>spec:
+</span><span>    containers:
+</span><span>    - name: simple-webapp
+</span><span>      image: simple-webapp
+</span><span>      ports:
+</span><span>        - containerPort: 8080
+</span><span>      resources:
+</span><span>        requests:
+</span><span>            memory: &quot;2Gi&quot;
+</span><span>            cpu: 1
+</span><span>        limits:
+</span><span>            memory: &quot;4Gi&quot;
+</span><span>            cpu: 2
+</span></code></pre>
+<p>cpu: [no.]   means no. of cores of cpu. We can specify as low as 0.1 or 100m, where m stands for millicore. We can go as low as 1m.</p>
+<p>memory: 256Mi, Mebibyte  or  256M/G. 
+<img src="/images/2023-11-07-17-25-48.png" alt="" />
+1 Gi = 1024 bytes </p>
+<p><img src="/images/2023-11-07-17-50-12.png" alt="" /></p>
+<p>requests/limits are set for each container in a pod. If a pod tries to consume more cpu than its limit constantly, the system throttles the CPU so that it doesn't go beyond the specified limit. Thus the container can't use cpu beyond the specified limit. However, if a pod tries to consume more memory than its limit constantly, the POD will be terminated with OOM error.
+<img src="/images/2023-11-07-17-35-16.png" alt="" /></p>
+<p>With no requests and no limits set, one pod can consume all the resources stopping other pods to have required resources.</p>
+<p>With No requests set but limits specified, k8s automatically sets <code>requests = limits</code> .</p>
+<p>With requests and limits both set, each pod gets guaranteed requested resources but can go up to limits resources specified if required. This setup is ideal if we know how much resources is optimal for the containers we run, also helps users/processes from misusing resources.</p>
+<p>With requests set but no limits set, if available the pods can consume as much cpu,memory as available if required. The 2nd pod on this node is also guaranteed requested cpu as specified if required but in terms of memory if pod2 requires more that requested memory it asks pod1 to free up memory and if pod1 has consumed all the memory resource of the node, pod1 is killed. This is the most ideal setup.</p>
+<p>If we want to ensure every pod deployed has default resources limits/requests specified, we can use LimitRange object. This is applicable at the namespace level.
+<code>$ cat limit-cpu-range.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: LimitRange
+</span><span>metadata:
+</span><span>    name: cpu-resource-constraint
+</span><span>spec:
+</span><span>    limits:
+</span><span>    - default:              #limits
+</span><span>        cpu: 500m
+</span><span>      defaultRequest:       #requests
+</span><span>        cpu: 500m
+</span><span>      max:                  #max limits
+</span><span>        cpu: &quot;1&quot;
+</span><span>      min:
+</span><span>        cpu: 100m           #min requests
+</span><span>      type: Container
+</span></code></pre>
+<p><code>$ cat limit-memory-range.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: LimitRange
+</span><span>metadata: memory-resource-constraint
+</span><span>spec:
+</span><span>    limits:
+</span><span>    - default:              #limits
+</span><span>        memory: 1Gi
+</span><span>      defaultRequest:       #requests
+</span><span>        memory: 1Gi
+</span><span>      max:                  #max limits
+</span><span>        memory: 1Gi
+</span><span>      min:                  #min limits
+</span><span>        memory: 500Mi
+</span><span>      type: Container
+</span></code></pre>
+<p>These limits are enforced when pods are created. If we create/change limits,requests it takes effect on newly created pod and doesn't affect the existing pods .</p>
+<p>We can also restrict the total amount of resources that can be consumed by the applications deployed in a k8s cluster. Like all the pods together shouldn't consume more than this much of CPU,memory we could create ResourceQuota at a namespace level. So if applied the current namespace will have the specified hard limits as below.
+<img src="/images/2023-11-07-18-16-08.png" alt="" /></p>
+<p><code>$ cat resource-quota.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>apiVersion: v1
+</span><span>kind: ResourceQuota
+</span><span>metadata: 
+</span><span>    name: my-resource-quota
+</span><span>spec:
+</span><span>    hard:
+</span><span>        requests.cpu: 4
+</span><span>        requests.memory: 4Gi
+</span><span>        limits.cpu: 10
+</span><span>        limits.memory: 10Gi
+</span></code></pre>
+<h5 id="docs">docs</h5>
+<p>Manage Memory, CPU and API Resources
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/</p>
+<p>LimitRange for CPU
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/</p>
+<p>LimitRange for Memory
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/</p>
+<h4 id="daemonset">DaemonSet</h4>
+<p>DaemonSet is like ReplicaSet but it runs one copy of the pod on each node in the cluster. When a new node is added to the cluster, a replica of the pod is automatically added to that node and when the node is removed the pod is automatically removed. The DaemonSet ensures that one copy of the pod is always present in all nodes int the cluster. kube-proxy is one of the worker node component that is required on each node in the cluster. This is one good use case of DaemonSet.
+<img src="/images/2023-11-07-19-20-11.png" alt="" /></p>
+<p>Use Cases:</p>
+<ul>
+<li>Setting(adding/removing) monitoring agents</li>
+<li>Setting networking solutions. eg: weave-net</li>
+</ul>
+<p>DaemonSet is handled by a daemonset controller through the kube-api server.
+A DaemonSet definition has similar structure as of ReplicaSet but we don't need replicas: </p>
+<p><code>$ cat fluentd-elasticsearch.yml</code></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>---
+</span><span>apiVersion: apps/v1
+</span><span>kind: DaemonSet
+</span><span>metadata:
+</span><span>  labels:
+</span><span>    app: elasticsearch
+</span><span>  name: elasticsearch
+</span><span>  namespace: kube-system
+</span><span>spec:
+</span><span>  selector:
+</span><span>    matchLabels:
+</span><span>      app: elasticsearch
+</span><span>  template:
+</span><span>    metadata:
+</span><span>      labels:
+</span><span>        app: elasticsearch
+</span><span>    spec:
+</span><span>      containers:
+</span><span>      - image: registry.k8s.io/fluentd-elasticsearch:1.20
+</span><span>        name: fluentd-elasticsearch
+</span></code></pre>
+<p><img src="/images/2023-11-07-19-25-19.png" alt="" /></p>
+<p>DaemonSet uses the default scheduler and nodeAffinity to deploy DaemonSet pods in the nodes.</p>
+<h4 id="static-pods">Static pods</h4>
+<p>Lets imagine a node w/o master node.
+<img src="/images/2023-11-10-19-00-41.png" alt="" />
+The kubelet can manage a node independently. The one thing the kubelet knows to do is create PODs but we don't have an API server here to provide POD details. We can configure the kubelet to read the pod definition files from a directory on the server designated to store information about pods. Not only does it create the pod it can ensure that the pod stays alive. If the application crashes, the Kublet attempts to restart it. If we make a change to any of the file withing this directory, the kubelet recreates the pod for those changes to take effect. If we remove a file from this directory the pod is deleted automatically. 
+<img src="/images/2023-11-10-19-16-46.png" alt="" />
+These PODs that are created by the kubelet on its own without the intervention from the API server or rest of the k8s cluster components are known as static pods. We can only create pods this way since kubelet works at a POD level and can only understand PODs. We can't create replicasets or deployments or services by placing a definition file in the designated directory. They are all concepts of the whole k8s architecture, that requires other control plane components like replication, daemonset and deployment controllers etc. Instead of passing that path via the kubelet.service file options directly we can provide a path to another config file using the config option and define the directory path as staticpodpath in that file.
+<img src="/images/2023-11-10-19-20-07.png" alt="" /></p>
+<p>The created pods can be seen using <code>$ docker ps</code> command. The way kubelet works is it can take in requests for creating pods from different inputs. The 1st way is creating static pods and other is from HTTP APi endpoint(how kube-apiserver provides input to kubelet). The master node does detect those static pods and can be listed with kubectl commands. When the kubelet creates a static pod if it is a part of a cluster, it also creates a mirror object in the kubeapi server.</p>
+<p>Why static pods?</p>
+<ul>
+<li>To deploy the control plane components itself as pods on a node. 
+<img src="/images/2023-11-10-19-30-53.png" alt="" />
+This way we don't have to download the binaries, configure services or worry about the services crashing(automatically restarted if crashed). Thats how the kubeadm(kubeadmin) tool sets up a k8s cluster.
+<img src="/images/2023-11-10-19-34-14.png" alt="" /></li>
+</ul>
+<p>Difference between static pods and daemonset:
+<img src="/images/2023-11-10-19-37-08.png" alt="" />
+Static pods end with -[node_name] in the pod names.</p>
+<h4 id="multiple-schedulers">Multiple Schedulers</h4>
+<p>We can make custom scheduler with our own scheduling algorithm with custom conditions/checks in it.
+<img src="/images/2023-11-10-21-37-11.png" alt="" />
+default-scheduler is the default scheduler and if we don't specify the name default-scheduler is selected.</p>
+<p>Creating custom schedulers as pod:
+<img src="/images/2023-11-10-21-40-55.png" alt="" /></p>
+<p>Using custom scheduler to schedule pods:
+<img src="/images/2023-11-10-21-46-35.png" alt="" /></p>
+<p><code>$ kubectl get events -o wide</code>     # to see scheduling events</p>
+<p><code>$ kubectl logs [custom_scheduler] -n [namespace]</code>  # view scheduler logs</p>
+<h5 id="scheduler-profile">scheduler profile</h5>
+<p>Default scheduling plugins:
+<img src="/images/2023-11-11-09-44-27.png" alt="" /></p>
+<p>Using extension points:
+<img src="/images/2023-11-11-09-46-02.png" alt="" /></p>
+<p><img src="/images/2023-11-11-09-48-06.png" alt="" /></p>
+<p>References:
+https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/</p>
 
 
     </div>
